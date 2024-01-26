@@ -11,29 +11,34 @@
                 <form method="post">
                     <div class="row">
                     <div class="col">
-                            <input type="text" placeholder="Enter Offer Id" class="form-control" disabled name="of_id" value="<?php echo $UserById['Data'][0]->of_id ?>" id="">
+                    <label for="offerid" class="input__label"><b>Offer Id</b></label>
+                            <input type="text" placeholder="Enter Offer Id" disabled class="form-control" disabled name="of_id" value="<?php echo $editoffers['Data'][0]->of_id ?>" id="">
                         </div>
                     </div>
                     
                     <div class="row mt-3">
                         <div class="col">
-                            <input type="text" placeholder="Enter Product Id" class="form-control" name="p_id" value="<?php echo $UserById['Data'][0]->p_id ?>" id="">
+                        <label for="productid" class="input__label"><b>Product Id</b></label>
+                            <input type="text" placeholder="Enter Product Id" class="form-control" name="p_id" value="<?php echo $editoffers['Data'][0]->p_id ?>" id="">
                         </div>
                     </div>
                    
                     <div class="row mt-3">
                         <div class="col">
-                            <input type="tel" placeholder="Enter Offer Start Date " class="form-control" name="of_startdate" value="<?php echo $UserById['Data'][0]->of_startdate ?>" id="">
+                        <label for="offerstartdate" class="input__label"><b>Offer Start Date</b></label>
+                            <input type="tel" placeholder="Enter Offer Start Date " class="form-control" name="of_startdate" value="<?php echo $editoffers['Data'][0]->of_startdate ?>" id="">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
-                            <input type="tel" placeholder="Enter Offer End Date " class="form-control" name="of_enddate" value="<?php echo $UserById['Data'][0]->of_enddate ?>" id="">
+                        <label for="offerenddate" class="input__label"><b>Offer End Date</b></label>
+                            <input type="tel" placeholder="Enter Offer End Date " class="form-control" name="of_enddate" value="<?php echo $editoffers['Data'][0]->of_enddate ?>" id="">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
-                            <input type="tel" placeholder="Enter Offer Detail " class="form-control" name="of_detail" value="<?php echo $UserById['Data'][0]->of_detail ?>" id="">
+                        <label for="offerdetail" class="input__label"><b>Offer Detail</b></label>
+                            <input type="tel" placeholder="Enter Offer Detail " class="form-control" name="of_detail" value="<?php echo $editoffers['Data'][0]->of_detail ?>" id="">
                         </div>
                     </div>
                     

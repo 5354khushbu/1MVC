@@ -75,7 +75,7 @@
                     <td class="border-bottom-0">
                       <div class="d-flex align-items-center gap-2">
                         <?php if ($value->role_id != 1) { ?>
-                          <a href="edituser?userid=<?php echo $value->id; ?>">
+                          <a href="edituser?c_id=<?php echo $value->c_id; ?>">
                             <span class="badge bg-primary rounded-3 fw-semibold">
                               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -86,7 +86,7 @@
                                 <path d="M16 5l3 3" />
                               </svg></span>
                           </a>
-                          <a href="deleteuser?userid=<?php echo $value->id; ?>">
+                          <a href="deleteuser?c_id=<?php echo $value->c_id; ?>">
                             <span class="badge bg-danger rounded-3 fw-semibold">
                               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"

@@ -19,7 +19,7 @@
             <h1>
                 <a href="home" class="text-center">
                     beauty
-                    <span class="d-block">Blog</span>
+                    <span class="d-block">Shop</span>
                 </a>
             </h1>
         </div>
@@ -123,147 +123,50 @@
 </nav>
 <!-- //breadcrumbs -->
 <!-- single -->
-<div class="single-w3l py-5">
+<div class="single-w3l">
     <div class="container py-xl-5 py-lg-3">
         <div class="row inner_sec_info pt-md-4">
             <!-- left side -->
-            <div class="col-lg-4">
-                <!-- blog grid -->
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp1.webp"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Lakme 9To5 Wet&Dry Compact </a><br>
-                            <a href="single.html" class="text-dark">MRP:₹279</a>
-                            <div class="text-center"><br><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
+            <?php
+            $card = 0;
+            foreach ($compactdata['Data'] as $key => $value) {
+                ?>
 
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp3.webp"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                           
-                            <a href="single.html" class="blog-btn text-dark">Miled Lakme Compact Powder, Packaging Type:
-                                Box, Packaging Size: 100 Gm</a><br>
-                            <a href="single.html" class="text-dark">MRP:₹279</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp4.webp"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Lakme Sun Expert Ultra Matte SPF 40 PA+++
-                                Compact Best Cosmetic Shop in Dhaka</a><br>
-                            <a href="single.html" class="text-dark">MRP:₹259</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row inner_sec_info pt-md-4">
-            <!-- left side -->
-            <div class="col-lg-4">
-                <!-- blog grid -->
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp7.jpg"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Swiss Beauty Foundation</a><br>
-                            <a href="single.html" class="text-dark">MRP:₹379</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
+                <div class="col-lg-4">
+                    <!-- blog grid -->
+                    <div class="full_width_blog_grid">
+                        <div class="card">
+                            <div class="card-header p-0">
 
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp6.jpg"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">High Coverage Compact Powder.</a><br>
-                            <a href="single.html" class="text-dark">MRP:₹249</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
+                                <img class="card-img-bottom"
+                                    src="<?php echo $this->base_url . "images/" . $value->p_image; ?>" alt="Card image cap">
+
+                            </div>
+                            <div class="card-body">
+
+                                <?php echo $value->p_des ?><br>
+                                MRP:₹
+                                <?php echo $value->p_price ?>
+
+                                <div class="text-center"><br><br>
+                                    <a href="addcart?productid=<?php echo $value->p_id; ?>"><button type="button" class="btn"
+                                            style="width:48%">Add To Cart</button></a>
+                                    <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy
+                                        Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- //blog grid -->
                 </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp5.avif"
-                                    alt="Card image cap">
-                            
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">mamaearth Compact powder</a><br>
-                            <a href="single.html" class="text-dark">MRP:₹259</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
+                <!-- blog grid -->
+                <?php
+                $card++;
+                if ($card == 3) { ?>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- //single -->
+                <div class="row inner_sec_info pt-md-4">
+                    <?php $card = 0;
+                }
+            }
+            ?>
+            <!-- //single -->

@@ -42,10 +42,36 @@
                     // echo "</pre>";
                   ?>
                   <tr>
+                  <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->of_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->p_name; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->of_startdate; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->of_enddate; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->of_detail; ?>
+                        </h6>
+                      </td>
+                      
                     
                     <td>
                       <div class="d-flex align-items-center gap-2">
-                        <a href="edit?userid=">
+                        <a href="editoffers?of_id=<?php echo $value->of_id; ?>">
                           <span class="badge bg-primary rounded-3 fw-semibold">
                           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -56,7 +82,7 @@
                                 <path d="M16 5l3 3" />
                               </svg>
                           </span></a>
-                        <a href="deleteuser?userid=">
+                        <a href="deleteoffers?of_id=<?php echo $value->of_id; ?>">
                           <span class="badge bg-danger rounded-3 fw-semibold">
                           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"

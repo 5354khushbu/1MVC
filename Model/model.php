@@ -40,7 +40,7 @@ class Model
         // echo "<pre>";
         // print_r($SQLEx);
         if ($SQLEx->num_rows > 0) {
-           $row = $SQLEx->fetch_object(); //return object access by $row->username
+            $row = $SQLEx->fetch_object(); //return object access by $row->username
             // echo "<pre>";
             // print_r($row);
             // exit;
@@ -59,7 +59,7 @@ class Model
     }
     function select($tbl, $whr = "")
     {
-        $SQL = "SELECT * FROM $tbl";
+        $SQL = "SELECT * FROM `$tbl`";
         if ($whr != "") {
             $SQL .= " WHERE ";
             foreach ($whr as $key => $value) {
@@ -86,37 +86,35 @@ class Model
         return $Res;
 
     }
-    // function selectjoin($tbl, $join, $clm = "*", $whr = "")
-    // {
-    //     $SQL = "SELECT $clm FROM $tbl ";
+    function selectjoin($tbl1, $where)
+    {
+        // $SQL = "SELECT $clm FROM $tbl ";
 
-    //     foreach ($join as $jkey => $jvalue) {
-    //         $SQL .= " JOIN $jkey ON $jvalue ";
-    //     }
-    //     if ($whr != "") {
-    //         $SQL .= "WHERE";
-    //         $SQL = rtrim($SQL, "AND");
-    //     }
-    //     // echo "<pre>";
-    //     // echo $SQL;
-    //     // exit;
-    //     $SQLEX = $this->connection->query($SQL);
-    //     if ($SQLEx->num_rows > 0) {
-    //         while ($row = $SQLEx->fetch_object()) {
-    //             $Data[] = $row;
-    //         }
-    //         $Res['Code'] = 1;
-    //         $Res['Data'] = $Data;
-    //         $Res['Msg'] = "Success";
+        $SQL="SELECT * FROM $tbl1";
+        foreach ($where as $key => $value) {
+            $SQL .= " LEFT JOIN $key on $value ";
+        }
+        // echo "<pre>";
+        // echo $SQL;
+        // exit;
+        $SQLEX = $this->connection->query($SQL);
+        if ($SQLEX->num_rows > 0) {
+            while ($row = $SQLEX->fetch_object()) {
+                $Data[] = $row;
+            }
+            // print_r($Data);
+            $Res['Code'] = 1;
+            $Res['Data'] = $Data;
+            $Res['Msg'] = "Success";
 
-    //     } else {
-    //         $Res['Code'] = 0;
-    //         $Res['Data'] = 0;
-    //         $Res['Msg'] = "Try again";
-    //     }
-    //     return $Res;
+        } else {
+            $Res['Code'] = 0;
+            $Res['Data'] = 0;
+            $Res['Msg'] = "Try again";
+        }
+        return $Res;
 
-    // }
+    }
     function insert($tbl, $data)
     {
         // echo "<pre>";
@@ -133,15 +131,14 @@ class Model
         $SQLEx = $this->connection->query($SQL);
         // echo "<pre>";
         // print_r($SQLEx);
-        if($SQLEx > 0){
-            $Res['Code'] =1;
-            $Res['Data'] =$data;
-            $Res['Msg'] ="Success";
-        }
-        else{
-            $Res['Code'] =0;
-            $Res['Data'] =0;
-            $Res['Msg'] ="Try again";
+        if ($SQLEx > 0) {
+            $Res['Code'] = 1;
+            $Res['Data'] = $data;
+            $Res['Msg'] = "Success";
+        } else {
+            $Res['Code'] = 0;
+            $Res['Data'] = 0;
+            $Res['Msg'] = "Try again";
         }
         return $Res;
     }

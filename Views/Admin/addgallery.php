@@ -19,18 +19,18 @@
         <div class="card border-primary mb-3 mt-5">
             <div class="card-header text-center">Add Images</div>
             <div class="card-body">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     <!-- <div class="row mt-3">
                         <div class="col">
                         <input type="text" placeholder="Category Name" class="form-control" name="categoryname" id="">
                         </div>
                     </div> -->
                     <div class="row mt-3">
-                        <input type="file" class="form-control">
+                        <input type="file" name="gallery" required class="form-control">
                     </div>
                     <div class="row mt-3">
                         <div class="col text-center">
-                            <input type="submit" class="btn btn-primary" value="Add Images" name="btn-regist" id="">
+                            <input type="submit" class="btn btn-primary" value="Add Images" name="btn-addgallery" id="">
                             <a href="allcategories"><button class="btn btn-danger" name="" id="">Back</button></a>
                         </div>
                     </div>

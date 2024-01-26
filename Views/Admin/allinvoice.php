@@ -16,13 +16,22 @@
                       <h6 class="fw-semibold mb-0">Invoice Id</h6>
                     </th>
                     <th>
-                      <h6 class="fw-semibold mb-0">Customer Name</h6>
-                    </th>
-                    <th>
                       <h6 class="fw-semibold mb-0">Order Id</h6>
                     </th>
                     <th>
+                      <h6 class="fw-semibold mb-0">Product Id</h6>
+                    </th>
+                    <th>
+                      <h6 class="fw-semibold mb-0">Customer Id</h6>
+                    </th>
+                    <th>
                       <h6 class="fw-semibold mb-0">Invoice Date</h6>
+                    </th>
+                    <th>
+                      <h6 class="fw-semibold mb-0">Quantity</h6>
+                    </th>
+                    <th>
+                      <h6 class="fw-semibold mb-0">Price</h6>
                     </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Total Price</h6>
@@ -33,75 +42,72 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Khushbu</td>
-                    <td>16</td>
-                    <td>12/02/2023</td>
-                    <td>200</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-2">
-                        <a href="edit?userid=">
-                          <span class="badge bg-primary rounded-3 fw-semibold">
-                            Edit
-                          </span></a>
-                        <a href="deleteuser?userid=">
-                          <span class="badge bg-danger rounded-3 fw-semibold">
-                            Download
-                          </span></a>
-                        <a href="deleteuser?userid=">
-                          <span class="badge bg-success rounded-3 fw-semibold">
-                            Delete
-                          </span></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12</td>
-                    <td>Darshna</td>
-                    <td>10</td>
-                    <td>12/04/2023</td>
-                    <td>400</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-2">
-                        <a href="edit?userid=">
-                          <span class="badge bg-primary rounded-3 fw-semibold">
-                            Edit
-                          </span></a>
-                        <a href="deleteuser?userid=">
-                          <span class="badge bg-danger rounded-3 fw-semibold">
-                            Download
-                          </span></a>
-                        <a href="deleteuser?userid=">
-                          <span class="badge bg-success rounded-3 fw-semibold">
-                            Delete
-                          </span></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12</td>
-                    <td>Darshita</td>
-                    <td>10</td>
-                    <td>16/06/2023</td>
-                    <td>400</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-2">
-                        <a href="edit?userid=">
-                          <span class="badge bg-primary rounded-3 fw-semibold">
-                            Edit
-                          </span></a>
-                        <a href="deleteuser?userid=">
-                          <span class="badge bg-danger rounded-3 fw-semibold">
-                            Download
-                          </span></a>
-                        <a href="deleteuser?userid=">
-                          <span class="badge bg-success rounded-3 fw-semibold">
-                            Delete
-                          </span></a>
-                      </div>
-                    </td>
-                  </tr>
+                  <?php //$index = 1;
+                  foreach ($allinvoice['Data'] as $key => $value) {
+                    ?>
+                    <tr>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->i_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->o_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->p_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->c_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->i_date; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->i_quantity; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->i_price; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->i_totalprice; ?>
+                        </h6>
+                      </td>
+
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <a href="editinvoice?i_id=<?php echo $value->i_id; ?>">
+                            <span class="badge bg-primary rounded-3 fw-semibold">
+                              Edit
+                            </span></a>
+                          <a href="downloadinvoice?i_id=<?php echo $value->i_id; ?>">
+                            <span class="badge bg-danger rounded-3 fw-semibold">
+                              Download
+                            </span></a>
+                          <a href="deleteinvoice?i_id=<?php echo $value->i_id; ?>">
+                            <span class="badge bg-success rounded-3 fw-semibold">
+                              Delete
+                            </span></a>
+                        </div>
+                      </td>
+                    </tr>
+
+                  <?php
+                  }
+                  ?>
 
                 </tbody>
               </table>

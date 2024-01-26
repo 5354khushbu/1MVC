@@ -22,14 +22,15 @@
                       <h6 class="fw-semibold mb-0">Payment Date</h6>
                     </th>
                     <th>
+                      <h6 class="fw-semibold mb-0">Payment Time</h6>
+                    </th>
+                    <th>
                       <h6 class="fw-semibold mb-0">Payment Amount</h6>
                     </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Payment Type </h6>
                     </th>
-                    <th>
-                      <h6 class="fw-semibold mb-0"> Action </h6>
-                    </th>
+                    
 
                   </tr>
                 </thead>
@@ -66,6 +67,11 @@
                       </td>
                       <td>
                         <p class="mb-0 fw-normal">
+                          <?php echo $value->pay_time; ?>
+                        </p>
+                      </td>
+                      <td>
+                        <p class="mb-0 fw-normal">
                           <?php echo $value->pay_amount; ?>
                         </p>
                       </td>
@@ -74,19 +80,7 @@
                           <?php echo $value->pay_type; ?>
                         </p>
                       </td>
-                      <td>
-                        <div class="d-flex align-items-center gap-2">
-                          <a href="editpayment?pay_id=<?php echo $value->pay_id; ?>">
-                            <span class="badge bg-primary rounded-3 fw-semibold">
-                              Accept
-                            </span></a>
-                          <a href="deletepayment?pay_id=<?php echo $value->pay_id; ?>">
-                            <span class="badge bg-danger rounded-3 fw-semibold">
-                              Deny
-                            </span></a>
-                        </div>
-                      </td>
-
+                      
 
 
                     </tr>

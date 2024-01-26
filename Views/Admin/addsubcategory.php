@@ -8,6 +8,8 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="<?php echo $this->base_url; ?>lib/jquery.js"></script>
+    <script src="<?php echo $this->base_url; ?>dist/jquery.validate.js"></script>
 </head>
 
 <body>
@@ -16,63 +18,27 @@
             <div class="card border-primary mb-3 mt-5">
                 <div class="card-header text-center">Add Sub Category</div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="row mt-3">
-
-                            <select name="category" class="form-control" onchange="sub(this.value)" id="category">
-                                <option value="">--Select Category--</option>
-                                <option value="makeup">Makeup</option>
-                                <option value="skincare">Skin Care</option>
-                                <option value="haircare">Hair Care</option>
-                            </select> <br>
-                            <select name="subcategory" class="form-control" id="subcategory">
-                                <option value="">--Select Category--</option>
-                            </select>
-                        </div>
-                        <script>
-                            function sub(SubCategory) {
-                                if (SubCategory == "makeup") {
-                                    let makeup = `<option value="">--Select Sub Category--</option>
-                                <option value="makeup">Compact</option>
-                                <option value="skincare">Foundation</option>
-                                <option value="haircare">Lipstick</option>
-                                <option value="haircare">Eyelinear</option>
-                                <option value="haircare">Eyeshadow</option>`;
-                                    // console.log(makeup);
-                                    $("#subcategory").html(makeup);
-                                } else if(SubCategory == "skincare") {
-                                    let skincare = `<option value="">--Select Sub Category--</option>
-                                <option value="makeup">Face wash</option>
-                                <option value="skincare">Moisturizer</option>
-                                <option value="haircare">Sunscreen</option>
-                                <option value="haircare">Sheetmask</option>`;
-                                    // console.log(makeup);
-                                    $("#subcategory").html(skincare);
-                                }else{
-                                    let haircare = `<option value="">--Select Sub Category--</option>
-                                <option value="makeup">Shampoo & Conditioner</option>
-                                <option value="skincare">Hair Oil</option>`;
-                                
-                                    // console.log(makeup);
-                                    $("#subcategory").html(haircare);
-                                }
-
-                            }
-                        </script>
-                        <div class="row mt-3">
-                            <input type="file" class="form-control">
+                            <select name="category" class="form-control" id="category">
+                                <option value="">Select Category</option>
+                        </div><br>
+                        <div class="row mt-3"><br>
+                            <label for="subcategory" class="input__label"><b>Sub Category Name</b></label>
+                            <input type="text" name="subcategory" class="form-control" id="subcategory"
+                                placeholder="Enter Sub Category">
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                                <label for="subcategorydescription">Sub Category Description</label>
-                                <textarea name="subcategorydescription" id="subcategorydescription" class="form-control"
-                                    cols="30" rows="3"></textarea>
+                                <label for="subcategorydescription" class="input__label"><b>Sub Category Description</b></label>
+                                <textarea name="subcategorydescription" id="subcategorydescription" required
+                                    class="form-control" cols="30" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col text-center">
-                                <input type="submit" class="btn btn-primary" value="Add SubCategory" name="btn-regist"
-                                    id="">
+                                <input type="submit" class="btn btn-primary" value="Add SubCategory"
+                                    name="btn-subcategory" id="">
                                 <a href="addsubcategories"><button class="btn btn-danger" name=""
                                         id="">Back</button></a>
                             </div>
@@ -82,6 +48,33 @@
                 </div>
             </div>
         </div>
+        <script>
+            $().ready(function () {
+                fetchcategory()
+            })
+            function fetchcategory() {
+                fetch("http://localhost/1MVC/getcategory").then((res) => res.json()).then((kaipan) => {
+                    console.log(kaipan);
+                    let optioncategory = '<option hidden>Category</option>'
+                    kaipan.forEach(element => {
+                        // console.log(element.country_name);
+                        optioncategory += `<option value="${element.cat_id}">${element.cat_name}</option>`
+                    });
+                    // console.log(optioncountry);
+                    $("#category").html(optioncategory);
+                })
+            }
+            // function fetchsubcategory(id) {
+            //     fetch(`http://localhost/1MVC/getsubcategory?cat_id=${id}`).then((res) => res.json()).then((kaipan) => {
+            //         console.log(kaipan);
+            //         let optionsubcategory = '<option hidden>Sub category</option>'
+            //         kaipan.forEach(element => {
+            //             optionsubcategory += `<option value="${element.sc_name}">${element.sc_name}</option>`
+            //         });
+            //         $("#subcategory").html(optionsubcategory);
+            //     })
+            // }
+        </script>
     </div>
 </body>
 

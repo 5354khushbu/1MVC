@@ -19,7 +19,7 @@
             <h1>
                 <a href="home" class="text-center">
                     beauty
-                    <span class="d-block">Blog</span>
+                    <span class="d-block">Shop</span>
                 </a>
             </h1>
         </div>
@@ -127,175 +127,41 @@
     <div class="container py-xl-5 py-lg-3">
         <div class="row inner_sec_info pt-md-4">
             <!-- left side -->
+            <?php
+            $card=0;
+            foreach ($sunscreendata['Data'] as $key => $value) {
+            ?>
             <div class="col-lg-4">
                 <!-- blog grid -->
                 <div class="full_width_blog_grid">
                     <div class="card">
                         <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/ss1.webp"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Safe Sunscreen Cream PA+ SPF 20</a><br>
-                            <a href="single.html" class="blog-btn text-dark">MRP:₹225</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/ss2.jpg"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Ultra Light Sunscreen with Turmeric and SPF
-                                50 PA+++</a><br>
-                            <a href="single.html" class="blog-btn text-dark">MRP:₹225</a>
-                            <div class="text-center">
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/ss3.webp"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Lakme Sunscreen spf50</a><br>
-                            <a href="single.html" class="blog-btn text-dark">MRP:₹199</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- //left side -->
-            <!-- right side -->
 
-            <!-- <div class="col-lg-4 event-right mt-lg-0 mt-sm-5 mt-4">
-                    <div class="event-right1">
-                        <div class="search1">
-                            <form class="form-inline" action="#" method="post">
-                                <input class="form-control rounded-0 mr-sm-2" type="search" placeholder="Search Here" aria-label="Search" required>
-                                <input class="btn bg-dark text-white rounded-0 mt-3 w-100" type="submit" value="Search">
-                            </form>
-                        </div>
-                          
-                </div> -->
-            <!-- //right side -->
-        </div>
-        <div class="row inner_sec_info pt-md-4">
-            <!-- left side -->
-            <div class="col-lg-4">
-                <!-- blog grid -->
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/ss22.jpg"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">mamaearth ultra light Indian Sunscreen
-                                Cream </a><br>
-                            <a href="single.html" class="blog-btn text-dark">MRP:₹225</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/ss5.jpg"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Neutrogena Invisible Daily Defense Sunscreen Lotion</a><br>
-                            <a href="single.html" class="blog-btn text-dark">MRP:₹249</a>
-                            
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <div class="col-lg-4">
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/ss4.webp"
-                                    alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            
-                            <a href="single.html" class="blog-btn text-dark">Neutrogena Ultra Sheer <br>Dry Touch Sunblock
-                                SPF 50 - 80 g
-                            </a><br>
-                            <a href="single.html" class="blog-btn text-dark">MRP:₹205</a>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn btn-warning">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- //left side -->
-            <!-- right side -->
+                            <img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $value->p_image; ?>"
+                                alt="Card image cap">
 
-            <!-- <div class="col-lg-4 event-right mt-lg-0 mt-sm-5 mt-4">
-                    <div class="event-right1">
-                        <div class="search1">
-                            <form class="form-inline" action="#" method="post">
-                                <input class="form-control rounded-0 mr-sm-2" type="search" placeholder="Search Here" aria-label="Search" required>
-                                <input class="btn bg-dark text-white rounded-0 mt-3 w-100" type="submit" value="Search">
-                            </form>
                         </div>
-                          
-                </div> -->
-            <!-- //right side -->
-        </div>
-    </div>
-</div>
+                        <div class="card-body">
+
+                            <?php echo $value->p_des;?><br>
+                            MRP:₹<?php echo $value->p_price; ?>
+                            <div class="text-center"><br>
+                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog grid -->
+            </div>
+            <!-- blog grid -->
+            <?php
+                $card++;
+                if ($card == 3) { ?>
+                </div>
+                <div class="row inner_sec_info pt-md-4">
+                    <?php $card = 0;
+                }
+            }
+            ?>
 <!-- //single -->

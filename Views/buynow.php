@@ -72,7 +72,8 @@
 
                         <div class="row mt-3">
                             <div class="col text-center">
-                                <input type="submit" class="btn btn-success" width="100px" name="Submit" id="">
+                                <input type="submit" class="btn btn-success" width="300px" name="
+                                " id="">
                                 <!-- <input type="Reset" class="btn btn-danger" name="" id=""> -->
                             </div>
                         </div>

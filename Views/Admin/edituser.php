@@ -11,28 +11,33 @@
                 <form method="post">
                     <div class="row">
                     <div class="col">
-                            <input type="text" placeholder="Enter id" class="form-control" disabled name="id" value="<?php echo $UserById['Data'][0]->id ?>" id="">
+                    <label for="id" class="input__label"><b>Id</b></label>
+                            <input type="text" placeholder="Enter id" class="form-control" disabled name="c_id" value="<?php echo $UserById['Data'][0]->c_id ?>" id="">
                         </div>
                     </div>
                     
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="username" class="input__label"><b>User Name</b></label>
                             <input type="text" placeholder="Enter User Name" class="form-control" name="username" value="<?php echo $UserById['Data'][0]->username ?>" id="">
                         </div>
                     </div>
                    
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="mobile" class="input__label"><b>Mobile</b></label>
                             <input type="tel" placeholder="Enter Mobile" class="form-control" name="mobile" value="<?php echo $UserById['Data'][0]->mobile ?>" id="">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="email" class="input__label"><b>Email</b></label>
                             <input type="email" placeholder="Enter Email" class="form-control" name="email" value="<?php echo $UserById['Data'][0]->email ?>" id="">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                            
                             <input type="radio" <?php  if ($UserById['Data'][0]->gender == "Male") {
                                 echo "checked";
                             }?> value="Male" name="gender" id="Male"> <label for="Male">Male</label>

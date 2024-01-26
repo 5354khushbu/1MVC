@@ -2,22 +2,33 @@
 	<div class="slider">
 		<div class="callbacks_container">
 			<ul class="rslides" id="slider3">
-
-
-				<li>
-					<div class="slider-img b3">
+				<li style="list-style-type: none;">
+					<div class="slider-img b1">
 						<div class="container">
 							<div class="slider_banner_info ml-md-5 pl-md-5">
-
 								<h3 class="bnr">lifestyle & beauty</h3>
-								<a href="about" class="w3ls-button">
-									<span>read more</span>
-								</a>
 							</div>
 						</div>
 					</div>
 				</li>
-
+				<li>
+					<div class="slider-img b2">
+						<div class="container">
+							<div class="slider_banner_info ml-md-5 pl-md-5">
+								<h3 class="bnr">lifestyle & beauty</h3>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="slider-img b3">
+						<div class="container">
+							<div class="slider_banner_info ml-md-5 pl-md-5">
+								<h3 class="bnr">lifestyle & beauty</h3>
+							</div>
+						</div>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -121,7 +132,7 @@
 								</div>
 								<div class="news-title">
 									<h4>
-										<a href="single.html" class="text-theme text-dark">Eyeshadow palette</a>
+										Eyeshadow Palette
 									</h4>
 								</div>
 								<div class="news-des my-3">
@@ -140,8 +151,8 @@
 								</div>
 								<div class="news-title">
 									<h4 class="title-large border-bottom">
-										<a href="single.html" class="text-theme text-dark">Eyeshadow + compact
-											powder</a>
+										Eyeshadow + compact
+										powder
 									</h4>
 								</div>
 
@@ -223,7 +234,6 @@
 								Best Red Nail Polish <br>
 								MRP:₹49
 							</h6>
-
 						</div>
 					</div>
 				</li>
@@ -265,17 +275,17 @@
 					<div class="card">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/f123.jpg"
+								<img class="card-img-bottom" height="350px" src="<?php echo $this->base_url; ?>images/f123.jpg"
 									alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body">
-
-							Lakme facewash<br><br>
-							MRP:₹279 <div class="text-center"><br>
-								<button type="button" class="btn btn-warning">Buy Now</button>
-							</div>
-
+							Lakme facewash<br>
+							MRP:₹279
+							<div class="text-center"><br>
+                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -292,12 +302,12 @@
 							</a>
 						</div>
 						<div class="card-body">
-
 							FULL COVERAGE FOUNDATION<br>
-							MRP:₹279
+							MRP:₹279<br>
 							<div class="text-center"><br>
-								<button type="button" class="btn btn-warning">Buy Now</button>
-							</div>
+                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -314,12 +324,12 @@
 							</a>
 						</div>
 						<div class="card-body">
-
 							sheetmask <br>
-							MRP:₹279
+							MRP:₹279<br>
 							<div class="text-center"><br>
-								<button type="button" class="btn btn-warning">Buy Now</button>
-							</div>
+                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -338,13 +348,12 @@
 							</a>
 						</div>
 						<div class="card-body">
-
-						21 Herbs Herbal Hair Oil  <br>
-							MRP:₹199
+							21 Herbs Herbal Hair Oil <br>
+							MRP:₹199<br>
 							<div class="text-center"><br>
-								<button type="button" class="btn btn-warning">Buy Now</button>
-							</div>
-
+                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -355,17 +364,16 @@
 				<div class="full_width_blog_grid">
 					<div class="card">
 						<div class="card-header p-0">
-							<a href="single.html">
-								<img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/eye4.webp"
+								<img class="card-img-bottom"  height="350px"src="<?php echo $this->base_url; ?>images/eye4.webp"
 									alt="Card image cap">
-							</a>
 						</div>
 						<div class="card-body">
-
-						Pash Tya BEAUTY Nude Edition Eyeshadow Palette, 18 Multi Shades Makeup Eye Shadow j <br>							
-						MRP:₹249	<div class="text-center"><br>
-								<button type="button" class="btn btn-warning">Buy Now</button>
-							</div>
+							BEAUTY Nude Edition Eyeshadow Palette<br>
+							MRP:₹249 <br>
+							<div class="text-center"><br>
+                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -376,18 +384,16 @@
 				<div class="full_width_blog_grid">
 					<div class="card">
 						<div class="card-header p-0">
-
 							<img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp5.avif"
 								alt="Card image cap">
-
 						</div>
 						<div class="card-body">
-
-							<a href="single.html" class="blog-btn text-dark">mamaearth Compact powder</a><br>
-							<a href="single.html" class="text-dark">MRP:₹259</a>
+							mamaearth Compact powder<br>
+							MRP:₹259
 							<div class="text-center"><br>
-								<button type="button" class="btn btn-warning">Buy Now</button>
-							</div>
+                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
 						</div>
 					</div>
 				</div>

@@ -16,36 +16,31 @@
             <div class="card border-primary mb-3 mt-5">
                 <div class="card-header text-center">Add Offer</div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
 
 
+                        
                         <div class="row mt-3">
                             <div class="col">
-                                <input type="text" placeholder="Offer Id" class="form-control" name="offer id"
+                                <input type="text" placeholder="Product Id" class="form-control" name="productid"
                                     id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                                <input type="text" placeholder="Product Id" class="form-control" name="product id"
+                                <input type="text" placeholder="Offer Start Date" required class="form-control" name="offerstartdate"
                                     id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                                <input type="text" placeholder="Offer Start Date" class="form-control" name="offer startdate"
+                                <input type="text" placeholder="Offer End Date" required class="form-control" name="offerenddate"
                                     id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                                <input type="text" placeholder="Offer End Date" class="form-control" name="offer enddate"
-                                    id="">
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col">
-                                <input type="text" placeholder="Order Details" class="form-control" name="order detail"
+                                <input type="text" placeholder="Order Details" required class="form-control" name="orderdetail"
                                     id="">
                             </div>
                         </div>

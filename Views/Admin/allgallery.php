@@ -11,73 +11,22 @@
             <div class="table-responsive mt-5">
               <table class=" table text-nowrap align-middle">
                 <thead class="text-dark">
-                  <tr>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\g1.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\oil33.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\g3.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                  <tr>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\k3.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\g5.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\g6.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                  <tr>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\g7.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\comp3.webp" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                    <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
-                        src="<?php echo $this->base_url; ?>images\facewash6.jpg" alt="">
-                      <br><a href="deleteuser?userid=">
-                        <span class="badge bg-danger rounded-3 fw-semibold">
-                          Delete
-                        </span></a>
-                    </td>
-                  </tr>
+                  <?php
+                  $col=0;
+                  foreach ($galleryimages['Data'] as $key => $value) {
+                      ?>
+                      <td class="p-0 text-center pb-4"><img class="p-1 pb-2" width="320px" height="200px"
+                          src="<?php echo $this->base_url . "images/".$value->g_path; ?>" alt="">
+                        <br><a href="deletegallery?g_id=<?php echo $value->g_id; ?>">
+                          <span class="badge bg-danger rounded-3 fw-semibold">
+                            Delete
+                          </span></a>
+                      </td>
+                      <?php
+                      $col++;
+                      if($col==3){ echo "</tr><tr>"; $col=0;} 
+                    }
+                    ?>
                 </thead>
                 <tbody>
                 </tbody>

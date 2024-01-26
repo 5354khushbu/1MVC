@@ -19,10 +19,13 @@
                       <h6 class="fw-semibold mb-0">Product Id</h6>
                     </th>
                     <th>
-                      <h6 class="fw-semibold mb-0">Cart Id</h6>
+                      <h6 class="fw-semibold mb-0">Quantity</h6>
                     </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Price</h6>
+                    </th>
+                    <th>
+                      <h6 class="fw-semibold mb-0">Total price</h6>
                     </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Order Date</h6>
@@ -31,23 +34,59 @@
                       <h6 class="fw-semibold mb-0">Delivery Date</h6>
                     </th>
                     <th>
-                      <h6 class="fw-semibold mb-0">Total price</h6>
-                    </th>
-                    <th>
                       <h6 class="fw-semibold mb-0">Action</h6>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                 <?php
-                  
                   foreach($allorder['Data'] as $key => $value) {
                     // echo "<pre>";
                     // print_r($value->role_id);
                     // echo "</pre>";
                   ?>
                   <tr>
-                    
+                  <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->o_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->username; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->p_name; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->quantity; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->price; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->totalprice; ?>
+                        </h6>
+                      </td>   
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->orderdate; ?>
+                        </h6>
+                      </td> 
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->deliverydate; ?>
+                        </h6>
+                      </td>   
+                                      
                     <td>
                       <div class="d-flex align-items-center gap-2">
                         <a href="editorder?o_id=<?php echo $value->o_id; ?>">

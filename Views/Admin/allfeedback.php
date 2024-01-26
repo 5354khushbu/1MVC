@@ -28,23 +28,44 @@
                 </thead>
                 <tbody>
                   <?php
-                  
-                  foreach($allfeedback['Data'] as $key => $value) {
+
+                  foreach ($allfeedback['Data'] as $key => $value) {
                     // echo "<pre>";
                     // print_r($value->role_id);
                     // echo "</pre>";
-                  ?>
-                  
-                  <tr>
-                    <td>
+                    ?>
+                    <tr>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->f_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->c_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->f_message; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->f_date; ?>
+                        </h6>
+                      </td>
+                      <td>
                       <div class="d-flex align-items-center gap-2">
-                        <a href="editfeedback?f_id=<?php echo $value->f_id; ?>">
-                          <!-- <span class="badge bg-primary rounded-3 fw-semibold">
-                            Disable / Enable
-                          </span></a> -->
+                        <a href="changefeedback?f_id=<?php echo $value->f_id; ?>&change=<?php echo($value->f_status==1)?(0):(1);?>">
+                          <span class="badge bg-primary rounded-3 fw-semibold">
+                          
+                          <?php echo($value->f_status==1)?('Disable'):('Enable');?>
+                          </span></a>
+                        
                       </div>
                     </td>
-                  </tr>
+                    </tr>
                   <?php //$index++;
                   } ?>
                 </tbody>

@@ -16,17 +16,17 @@
             <div class="card border-primary mb-3 mt-5">
                 <div class="card-header text-center">Add Category</div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="row mt-3">
                             <div class="row mt-3">
-                                <div class="col">
+                                <!-- <div class="col">
                                     <input type="text" placeholder="Category Id" class="form-control" name="category id"
                                         id="">
-                                </div>
+                                </div> -->
                             </div>
 
                             
-                            <select name="city" class="form-control" id="city">
+                            <select name="category" class="form-control" id="category">
                                 <option value="">--Select Category--</option>
                                 <option value="makeup">Makeup</option>
                                 <option value="skincare">Skin Care</option>
@@ -35,12 +35,12 @@
                             </select>
                         </div>
                         <div class="row mt-3">
-                            <input type="file" class="form-control">
+                            <input type="file" name="profile_pic" required class="form-control">
                         </div>
                         <div class="row mt-3">
                             <div class="col">
                                 <label for="categorydescription">Category Description</label>
-                                <textarea name="categorydescription" id="categorydescription" class="form-control"
+                                <textarea name="categorydescription" id="categorydescription" required class="form-control"
                                     cols="30" rows="3"></textarea>
                             </div>
                         </div>

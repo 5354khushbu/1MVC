@@ -17,29 +17,29 @@
             <div class="card border-primary mb-3 mt-5">
                 <div class="card-header text-center">Add Delivery Boy</div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="row mt-3">
                             <div class="col">
                                 <input type="text" placeholder="Delivery Boy Name" class="form-control"
-                                    name="delivery boy name" id="">
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col">
-                                <input type="text" placeholder="Delivery Boy ContactNo" class="form-control"
-                                    name="delivery boy contactno" id="">
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col">
-                                <input type="text" placeholder="Delivery Boy Email" class="form-control"
-                                    name="delivery boy email" id="">
+                                    name="deliveryboyname" id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
                                 <input type="password" placeholder="Password" class="form-control" name="password"
                                     id="">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="text" placeholder="Delivery Boy ContactNo" class="form-control"
+                                    name="deliveryboycontactno" id="">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="text" placeholder="Delivery Boy Email" class="form-control"
+                                    name="deliveryboyemail" id="">
                             </div>
                         </div>
                         <div class="row mt-3">

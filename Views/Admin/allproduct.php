@@ -27,6 +27,10 @@
                                         <th>
                                             <h6 class="fw-semibold mb-0">Product image</h6>
                                         </th>
+                                        <th>
+                                            <h6 class="fw-semibold mb-0">Product Description</h6>
+                                        </th>
+
 
                                         <th>
                                             <h6 class="fw-semibold mb-0">Action</h6>
@@ -34,110 +38,89 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>Eyeshadow</td>
-                                        <td>200</td>
-                                        <td><img width="100px" src="<?php echo $this->base_url; ?>images\k3.jpg" alt="">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <a href="edit?userid=">
-                                                    <span class="badge bg-primary rounded-3 fw-semibold">
-                                                        Edit
-                                                    </span></a>
-                                                <a href="deleteuser?userid=">
-                                                    <span class="badge bg-danger rounded-3 fw-semibold">
-                                                        Delete
-                                                    </span></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>5</td>
-                                        <td>compact</td>
-                                        <td>300</td>
-                                        <td><img width="100px" src="<?php echo $this->base_url; ?>images\comp6.jpg"
-                                                alt="">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <a href="edit?userid=">
-                                                    <span class="badge bg-primary rounded-3 fw-semibold">
-                                                        Edit
-                                                    </span></a>
-                                                <a href="deleteuser?userid=">
-                                                    <span class="badge bg-danger rounded-3 fw-semibold">
-                                                        Delete
-                                                    </span></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>6</td>
-                                        <td>facewash</td>
-                                        <td>200</td>
-                                        <td><img width="100px" src="<?php echo $this->base_url; ?>images\facewash6.jpg"
-                                                alt="">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <a href="edit?userid=">
-                                                    <span class="badge bg-primary rounded-3 fw-semibold">
-                                                        Edit
-                                                    </span></a>
-                                                <a href="deleteuser?userid=">
-                                                    <span class="badge bg-danger rounded-3 fw-semibold">
-                                                        Delete
-                                                    </span></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>8</td>
-                                        <td>Shampoo & Conditioner</td>
-                                        <td>500</td>
-                                        <td><img width="100px" src="<?php echo $this->base_url; ?>images\shampoo11.webp"
-                                                alt="">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <a href="edit?userid=">
-                                                    <span class="badge bg-primary rounded-3 fw-semibold">
-                                                        Edit
-                                                    </span></a>
-                                                <a href="deleteuser?userid=">
-                                                    <span class="badge bg-danger rounded-3 fw-semibold">
-                                                        Delete
-                                                    </span></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>9</td>
-                                        <td>Nivya Moisturizer</td>
-                                        <td>200</td>
-                                        <td><img width="100px" src="<?php echo $this->base_url; ?>images\cream111.jpg"
-                                                alt="">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <a href="edit?userid=">
-                                                    <span class="badge bg-primary rounded-3 fw-semibold">
-                                                        Edit
-                                                    </span></a>
-                                                <a href="deleteuser?userid=">
-                                                    <span class="badge bg-danger rounded-3 fw-semibold">
-                                                        Delete
-                                                    </span></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <?php //$index = 1;
+                                    foreach ($allproduct['Data'] as $key => $value) {
+                                        // echo "<pre>";
+                                        // print_r($value->role_id);
+                                        // print_r($allcategories['Data'][0]);
+                                        // echo "</pre>";
+                                    
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <h6 class="fw-semibold mb-1">
+                                                    <?php echo $value->p_id; ?>
+                                                </h6>
+                                            </td>
+                                            <td>
+                                                <h6 class="fw-semibold mb-1">
+                                                    <?php echo $value->sc_id; ?>
+                                                </h6>
+
+                                            </td>
+                                            <td>
+                                                <h6 class="fw-semibold mb-1">
+                                                    <?php echo $value->p_name; ?>
+                                                </h6>
+
+                                            </td>
+                                            <td>
+                                                <h6 class="fw-semibold mb-1">
+                                                    <?php echo $value->p_price; ?>
+                                                </h6>
+
+                                            </td>
+                                            <td>
+                                                <!-- <h6 class="fw-semibold mb-1">
+                                                <?php //echo $value->p_image; ?>
+                                                </h6> -->
+                                                <img width="100px" src="<?php echo $this->base_url."images/". $value->p_image; ?>" alt="">
+
+                                            </td>
+                                            <td>
+                                                <h6 class="fw-semibold mb-1 text-wrap">
+                                                    <?php echo $value->p_des; ?>
+                                                </h6>
+
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="editproduct?p_id=<?php echo $value->p_id; ?>">
+                                                        <span class="badge bg-primary rounded-3 fw-semibold">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="icon icon-tabler icon-tabler-edit" width="24"
+                                                                height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                                stroke="currentColor" fill="none" stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                                <path
+                                                                    d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                                                <path
+                                                                    d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                                                <path d="M16 5l3 3" />
+                                                            </svg>
+
+                                                        </span></a>
+                                                    <a href="deleteproduct?p_id=<?php echo $value->p_id; ?>">
+                                                        <span class="badge bg-danger rounded-3 fw-semibold">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="icon icon-tabler icon-tabler-trash" width="24"
+                                                                height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                                stroke="currentColor" fill="none" stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                                <path d="M4 7l16 0" />
+                                                                <path d="M10 11l0 6" />
+                                                                <path d="M14 11l0 6" />
+                                                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                                            </svg>
+                                                        </span></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php //$index++;
+                                    } ?>
                                 </tbody>
                             </table>
                         </div>

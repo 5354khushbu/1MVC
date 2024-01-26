@@ -45,6 +45,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		.pt-8 {
 			padding-top: 8rem
 		}
+		.callbacks_tabs a:after{
+			background-color: #0000ff00 !important;
+		}
 	</style>
 </head>
 
@@ -58,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h1>
 					<a href="home" class="text-center">
 						beauty
-						<span class="d-block">Blog</span>
+						<span class="d-block">Shop</span>
 					</a>
 				</h1>
 			</div>
@@ -193,30 +196,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									</ul>
 								</li>
-								<!-- <li class="treeview">
-									<a href="#">
-										<span>variant 4</span>
-										<i class="fa fa-angle-left pull-right"></i>
-									</a>
-									<ul class="treeview-menu">
-										<li>
-											<a href="single_col_1.html">
-												<i class="fa fa-angle-right"></i>Style 1</a>
-										</li>
-
-										<li>
-											<a href="single_col_2.html">
-												<i class="fa fa-angle-right"></i>Style 2</a>
-										</li>
-										<li>
-											<a href="single_col_3.html">
-												<i class="fa fa-angle-right"></i>Style 3</a>
-										</li>
-									</ul>
-								</li> -->
 							</ul>
 						</li>
-
+						<li class="treeview">
+							<a href="checkout">
+								<span>Checkout</span>
+							</a>
+						</li>
 						<li class="treeview">
 							<a href="contact">
 								<span>Contact</span>
