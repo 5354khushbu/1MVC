@@ -401,6 +401,7 @@ class controller extends Model
                     break;
                 case '/product':
                     $allproduct = $this->select("pro");
+                    // $allproduct = $this->selectjoin('pro', array('subcategory'=>'pro.sc_id = subcategory.sc_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allproduct.php");
                     include_once("Views/Admin/footer.php");
@@ -590,7 +591,9 @@ class controller extends Model
                 case '/offers':
                     // $alloffer = $this->select("offers");
                     $alloffer = $this->selectjoin("offers",array('pro'=>'offers.p_id = pro.p_id'));
-                    include_once("Views/Admin/header.php");
+                    echo "<pre>";
+                    print_r($alloffer);
+                    // include_once("Views/Admin/header.php");
                     include_once("Views/Admin/alloffer.php");
                     include_once("Views/Admin/footer.php");
                     break;
@@ -645,8 +648,9 @@ class controller extends Model
                     }
                     break;
                 case '/payment':
-                    $allpayment = $this->select("payment");
-                    // $allorder = $this->selectjoin("payment", array('users' => 'payment.c_id = users.c_id', 'orderdata' => 'orderdata.c_id = pro.c_id'));
+                    // $allpayment = $this->select("payment");
+                    $allpayment = $this->selectjoin('payment', array('users'=>'users.c_id = orderdata.c_id'));
+                    // $allpayment = $this->selectjoin('payment', array('users'=>'users.c_id = category.cat_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allpayment.php");
                     include_once("Views/Admin/footer.php");
@@ -707,7 +711,8 @@ class controller extends Model
                     }
                     break;
                 case '/feedback':
-                    $allfeedback = $this->select("feedback");
+                    // $allfeedback = $this->select("feedback");
+                    $allfeedback = $this->selectjoin('feedback', array('users'=>'feedback.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allfeedback.php");
                     include_once("Views/Admin/footer.php");

@@ -42,7 +42,7 @@
                       </td>
                       <td>
                         <h6 class="fw-semibold mb-1">
-                          <?php echo $value->c_id; ?>
+                          <?php echo $value->username; ?>
                         </h6>
                       </td>
                       <td>

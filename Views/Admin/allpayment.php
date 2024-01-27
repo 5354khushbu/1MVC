@@ -52,7 +52,7 @@
                       </td>
                       <td>
                         <p class="mb-0 fw-normal">
-                          <?php echo $value->c_id; ?>
+                          <?php echo $value->username; ?>
                         </p>
                       </td>
                       <td>
