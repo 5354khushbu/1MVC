@@ -40,6 +40,7 @@ class controller extends Model
                     include_once("Views/contact.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/login':
                     include_once("Views/header.php");
                     include_once("Views/login.php");
@@ -176,6 +177,12 @@ class controller extends Model
                     include_once("Views/shampoo&conditioner.php");
                     include_once("Views/footer.php");
                     break;
+                case '/allgallery':
+                    $gallerydata = $this->select("gallery", array("g_id" => "2"));
+                    include_once("Views/header.php");
+                    include_once("Views/gallery.php");
+                    include_once("Views/footer.php");
+                    break;
 
                 // ===========================Admin panel=========================
 
@@ -305,7 +312,7 @@ class controller extends Model
                     break;
                 case '/subcategory':
                     // $allsubcategories = $this->select("subcategory");
-                    $allsubcategories = $this->selectjoin('subcategory', array('category'=>'subcategory.cat_id = category.cat_id'));
+                    $allsubcategories = $this->selectjoin('subcategory', array('category' => 'subcategory.cat_id = category.cat_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allsubcategory.php");
                     include_once("Views/Admin/footer.php");
@@ -590,10 +597,10 @@ class controller extends Model
                     break;
                 case '/offers':
                     // $alloffer = $this->select("offers");
-                    $alloffer = $this->selectjoin("offers",array('pro'=>'offers.p_id = pro.p_id'));
-                    echo "<pre>";
-                    print_r($alloffer);
-                    // include_once("Views/Admin/header.php");
+                    $alloffer = $this->selectjoin("offers", array('pro' => 'pro.p_id = offers.p_id'));
+                    // echo "<pre>";
+                    // print_r($alloffer);
+                    include_once("Views/Admin/header.php");
                     include_once("Views/Admin/alloffer.php");
                     include_once("Views/Admin/footer.php");
                     break;
@@ -603,7 +610,7 @@ class controller extends Model
                     include_once("Views/Admin/footer.php");
                     if (isset($_REQUEST['btn-offer'])) {
                         $InsertData = array(
-                            "of_id" => $_REQUEST['offerid'],
+                            // "of_id" => $_REQUEST['offerid'],
                             "p_id" => $_REQUEST['productid'],
                             "of_startdate" => $_REQUEST['offerstartdate'],
                             "of_enddate" => $_REQUEST['offerenddate'],
@@ -649,14 +656,14 @@ class controller extends Model
                     break;
                 case '/payment':
                     // $allpayment = $this->select("payment");
-                    $allpayment = $this->selectjoin('payment', array('users'=>'users.c_id = orderdata.c_id'));
-                    // $allpayment = $this->selectjoin('payment', array('users'=>'users.c_id = category.cat_id'));
+                    $allpayment = $this->selectjoin('payment', array('users' => 'users.c_id = payment.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allpayment.php");
                     include_once("Views/Admin/footer.php");
                     break;
                 case '/invoice':
-                    $allinvoice = $this->select("invoice");
+                    // $allinvoice = $this->select("invoice");
+                    $allinvoice = $this->selectjoin("invoice", array('users' => 'invoice.c_id = users.c_id', 'pro' => 'invoice.p_id = pro.p_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allinvoice.php");
                     include_once("Views/Admin/footer.php");
@@ -712,7 +719,7 @@ class controller extends Model
                     break;
                 case '/feedback':
                     // $allfeedback = $this->select("feedback");
-                    $allfeedback = $this->selectjoin('feedback', array('users'=>'feedback.c_id = users.c_id'));
+                    $allfeedback = $this->selectjoin('feedback', array('users' => 'feedback.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allfeedback.php");
                     include_once("Views/Admin/footer.php");
@@ -786,7 +793,7 @@ class controller extends Model
                     break;
                 case '/checkout':
                     if (isset($_SESSION['UserData'])) {
-                        $checkout = $this->selectjoin('cart', array('pro'=>'cart.p_id = pro.p_id'));
+                        $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'));
                         include_once("Views/checkout.php");
                     } else {
                         header("location:login");

@@ -242,9 +242,10 @@
                 <div class="col-md-12">
                     <div class="invoice-wrapper">
                         <div class="intro">
-                            Hi <strong>John McClane</strong>,
+                            Hi <strong>khushbu</strong>,
                             <br>
-                            This is the receipt for a payment of <strong>$312.00</strong> (USD) for your works
+                            This is the receipt for a payment of <strong>135
+                                .00</strong>for your works
                         </div>
 
                         <div class="payment-info">
@@ -255,7 +256,7 @@
                                 </div>
                                 <div class="col-sm-6 text-right" style="text-align: end;">
                                     <span>Payment Date</span>
-                                    <strong>Jul 09, 2014 - 12:20 pm</strong>
+                                    <strong>Jan 09, 2024 - 12:20 pm</strong>
                                 </div>
                             </div>
                         </div>
@@ -265,30 +266,30 @@
                                 <div class="col-sm-6">
                                     <span>Client</span>
                                     <strong>
-                                        Andres felipe posada
+                                        khushbu Rathod
                                     </strong>
                                     <p>
-                                        989 5th Avenue <br>
-                                        City of monterrey <br>
-                                        55839 <br>
-                                        USA <br>
+                                        B-203 <br>
+                                        Saligram plus <br>
+                                        Chandlodiya,ahmedabad <br>
+                                        India <br>
                                         <a href="#">
-                                            jonnydeff@gmail.com
+                                            khushburathod@gmail.com
                                         </a>
                                     </p>
                                 </div>
                                 <div class="col-sm-6 text-right" style="text-align: end;">
                                     <span>Payment To</span>
                                     <strong>
-                                        Juan fernando arias
+                                        Vaishali Patel
                                     </strong>
                                     <p>
-                                        344 9th Avenue <br>
-                                        San Francisco <br>
+                                        A-304 Om Residency <br>
+                                        Gota Road <br>
                                         99383 <br>
-                                        USA <br>
+                                        India <br>
                                         <a href="#">
-                                            juanfer@gmail.com
+                                            vaishalopatel@gmail.com
                                         </a>
                                     </p>
                                 </div>
@@ -348,19 +349,21 @@
                                     Thanks a lot.
                                 </p>
                                 <div class="field">
-                                    Subtotal <span>&#8377; 
+                                    Subtotal <span>&#8377;
                                         <?php
-                                        $subtotal=0;
+                                        $subtotal = 0;
                                         foreach ($data['Data'] as $key => $value) {
-                                            $subtotal+=$value->i_price;
+                                            $subtotal += $value->i_price;
                                         }
                                         echo $subtotal;
                                         ?>
                                     </span>
                                 </div>
                                 <div class="field">
-                                    Shipping <span>&#8377; <?ph
-                                    "50";?> </span>
+                                    Shipping <span>50&#8377;
+                                        <?php
+                                        "50"; ?>
+                                    </span>
                                 </div>
                                 <div class="field">
                                     Discount <span>10%</span>
@@ -368,10 +371,10 @@
                                 <div class="field grand-total">
                                     Total <span>
                                         <?php
-                                            $discount=0;
-                                            $total=$subtotal+50;
-                                            $discount=($total)*10/100;
-                                            echo $total-$discount;
+                                        $discount = 0;
+                                        $total = $subtotal + 50;
+                                        $discount = ($total) * 10 / 100;
+                                        echo $total - $discount;
                                         ?>
                                     </span>
                                 </div>

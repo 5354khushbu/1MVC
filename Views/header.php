@@ -204,6 +204,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</a>
 						</li>
 						<li class="treeview">
+							<a href="gallery">
+								<span>Gallery</span>
+							</a>
+						</li>
+						<li class="treeview">
 							<a href="contact">
 								<span>Contact</span>
 							</a>
