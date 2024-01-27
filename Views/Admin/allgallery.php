@@ -4,7 +4,7 @@
       <div class="card w-100">
         <div class="card-body p-4">
           <div class="row">
-            <h5 class="col-10">Gallery</h5>
+            <h5 class="col-10"><b>Gallery</b></h5>
             <div class="col-2 text-right">
               <a class="btn btn-md btn-primary" href="addgallery">Add Image</a>
             </div>

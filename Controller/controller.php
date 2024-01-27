@@ -304,7 +304,8 @@ class controller extends Model
                     }
                     break;
                 case '/subcategory':
-                    $allsubcategories = $this->select("subcategory");
+                    // $allsubcategories = $this->select("subcategory");
+                    $allsubcategories = $this->selectjoin('subcategory', array('category'=>'subcategory.cat_id = category.cat_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allsubcategory.php");
                     include_once("Views/Admin/footer.php");

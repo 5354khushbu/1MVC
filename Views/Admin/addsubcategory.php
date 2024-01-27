@@ -16,7 +16,7 @@
     <div class="row mt-5">
         <div class="col-lg-6 offset-lg-3 mt-5">
             <div class="card border-primary mb-3 mt-5">
-                <div class="card-header text-center">Add Sub Category</div>
+                <div class="card-header text-center"><b>Add Sub Category</b></div>
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
                         <div class="row mt-3">

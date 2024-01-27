@@ -43,7 +43,7 @@
                       </td>
                       <td>
                         <p class="mb-0 fw-normal">
-                         <?php echo $value->cat_id; ?>
+                         <?php echo $value->cat_name; ?>
                         </p>
                       </td>
                       <td>

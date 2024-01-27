@@ -14,7 +14,7 @@
     <div class="row mt-5">
         <div class="col-lg-6 offset-lg-3 mt-5">
             <div class="card border-primary mb-3 mt-5">
-                <div class="card-header text-center">Add Offer</div>
+                <div class="card-header text-center"><b>Add Offer</b></div>
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
 
@@ -22,24 +22,28 @@
                         
                         <div class="row mt-3">
                             <div class="col">
+                            <label for="productid" class="input__label"><b>Product Id</b></label>
                                 <input type="text" placeholder="Product Id" class="form-control" name="productid"
                                     id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
+                            <label for="offerstartdate" class="input__label"><b>Offer Start Date</b></label>
                                 <input type="text" placeholder="Offer Start Date" required class="form-control" name="offerstartdate"
                                     id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
+                            <label for="offerenddate" class="input__label"><b>Offer End Date</b></label>
                                 <input type="text" placeholder="Offer End Date" required class="form-control" name="offerenddate"
                                     id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
+                            <label for="orderdetail" class="input__label"><b>Order Details</b></label>
                                 <input type="text" placeholder="Order Details" required class="form-control" name="orderdetail"
                                     id="">
                             </div>
