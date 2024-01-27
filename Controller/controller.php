@@ -177,12 +177,12 @@ class controller extends Model
                     include_once("Views/shampoo&conditioner.php");
                     include_once("Views/footer.php");
                     break;
-                case '/allgallery':
-                    $gallerydata = $this->select("gallery", array("g_id" => "2"));
-                    include_once("Views/header.php");
-                    include_once("Views/gallery.php");
-                    include_once("Views/footer.php");
-                    break;
+                // case '/allgallery':
+                //     $gallerydata = $this->select("gallery", array("g_id" => "2"));
+                //     include_once("Views/header.php");
+                //     include_once("Views/gallery.php");
+                //     include_once("Views/footer.php");
+                //     break;
 
                 // ===========================Admin panel=========================
 
@@ -407,8 +407,8 @@ class controller extends Model
                     }
                     break;
                 case '/product':
-                    $allproduct = $this->select("pro");
-                    // $allproduct = $this->selectjoin('pro', array('subcategory'=>'pro.sc_id = subcategory.sc_id'));
+                    // $allproduct = $this->select("pro");
+                    $allproduct = $this->selectjoin('pro', array('subcategory'=>'subcategory.sc_id = pro.sc_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allproduct.php");
                     include_once("Views/Admin/footer.php");
@@ -800,6 +800,16 @@ class controller extends Model
                     }
                     break;
                 case '/deletecheckout':
+                    $CheckoutDeleteResponse = $this->delete("cart", array("cart_id" => $_GET['cart_id']));
+                    echo "<pre>";
+                    print_r($CheckoutDeleteResponse);
+                    try {
+                        if ($CheckoutDeleteResponse['Code'] == 1) {
+                            header("location:checkout");
+                        }
+                    } catch (\Exception $e) {
+                        echo $e->getMessage();
+                    }
                     break;
                 default:
                     break;

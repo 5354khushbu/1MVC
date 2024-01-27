@@ -54,7 +54,7 @@
                                             </td>
                                             <td>
                                                 <h6 class="fw-semibold mb-1">
-                                                    <?php echo $value->sc_id; ?>
+                                                    <?php echo $value->sc_name; ?>
                                                 </h6>
 
                                             </td>

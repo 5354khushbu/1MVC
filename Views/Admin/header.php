@@ -16,7 +16,7 @@
     data-sidebar-position="fixed" data-header-position="fixed">
     <!-- Sidebar Start -->
     <!-- -------------------------------------------------------------- -->
-    <!-- <aside class="left-sidebar">
+    <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
@@ -136,7 +136,7 @@
         <!-- End Sidebar navigation -->
       </div>
       <!-- End Sidebar scroll-->
-    </aside> -->
+    </aside>
     <!--  Sidebar End -->
     <!--  Main wrapper -->
     <div class="body-wrapper">
