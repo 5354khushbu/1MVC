@@ -189,7 +189,8 @@
 </head>
 
 <body>
-    <div class="iphone">
+   <section>
+   <div class="iphone">
         <header class="header">
             <h1>Checkout</h1>
         </header>
@@ -209,22 +210,19 @@
                 <legend>Payment Method</legend>
                 <div class="form__radios">
                     <div class="form__radio">
-                        <label for="visa"><svg class="icon">
-                                <use xlink:href="#icon-visa" />
-                            </svg>Visa Payment</label>
-                        <input checked id="visa" name="payment-method" type="radio" />
+                        <label for="cash"><svg class="icon">
+                            </svg>Cash On Delivery</label>
+                        <input checked id="cash" name="payment-method" type="radio" />
                     </div>
                     <div class="form__radio">
-                        <label for="paypal"><svg class="icon">
-                                <use xlink:href="#icon-paypal" />
-                            </svg>PayPal</label>
-                        <input id="paypal" name="payment-method" type="radio" />
+                        <label for="upi"><svg class="icon">
+                            </svg>UPI</label>
+                        <input id="upi" name="payment-method" type="radio" />
                     </div>
                     <div class="form__radio">
-                        <label for="mastercard"><svg class="icon">
-                                <use xlink:href="#icon-mastercard" />
-                            </svg>Master Card</label>
-                        <input id="mastercard" name="payment-method" type="radio" />
+                        <label for="debit"><svg class="icon">
+                            </svg>Debit/ATM Card</label>
+                        <input id="debit" name="payment-method" type="radio" />
                     </div>
                 </div>
             </fieldset>
@@ -234,21 +232,21 @@
                     <tbody>
                         <tr>
                             <td>Shipping fee</td>
-                            <td align="right">$5.43</td>
+                            <td align="right">50</td>
                         </tr>
                         <tr>
                             <td>Discount 10%</td>
-                            <td align="right">-$1.89</td>
+                            <td align="right">-10</td>
                         </tr>
                         <tr>
-                            <td>Price Total</td>
-                            <td align="right">$84.82</td>
+                            <td>Total Price</td>
+                            <td align="right">100</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td>Total</td>
-                            <td align="right">$88.36</td>
+                            <td align="right">140</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -399,6 +397,7 @@
             </g>
         </symbol>
     </svg>
+   </section>
 </body>
 
 </html>

@@ -116,35 +116,38 @@
         <div class="row inner_sec_info pt-md-4">
             <!-- left side -->
             <?php
-            $card=0;
+            $card = 0;
             foreach ($moisturizerdata['Data'] as $key => $value) {
-            ?>
-        
-            <div class="col-lg-4">
-                <!-- blog grid -->
-                <div class="full_width_blog_grid">
-                    <div class="card">
-                        <div class="card-header p-0">
+                ?>
 
-                            <img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $value->p_image; ?>"
-                                alt="Card image cap">
+                <div class="col-lg-4">
+                    <!-- blog grid -->
+                    <div class="full_width_blog_grid">
+                        <div class="card">
+                            <div class="card-header p-0">
 
-                        </div>
-                        <div class="card-body">
+                                <img class="card-img-bottom"
+                                    src="<?php echo $this->base_url . "images/" . $value->p_image; ?>" alt="Card image cap">
 
-                            <?php echo $value->p_des;?><br>
-                            MRP:₹<?php echo $value->p_price;?>
-                            <div class="text-center"><br>
-                                <button type="button" class="btn" style="width:48%">Add To Cart</button>
-                                <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy Now</button>
+                            </div>
+                            <div class="card-body">
+
+                                <?php echo $value->p_des; ?><br>
+                                MRP:₹
+                                <?php echo $value->p_price; ?>
+                                <div class="text-center"><br>
+                                    <button type="button" class="btn" style="width:48%">Add To Cart</button>
+                                    <a href="buynow"> <button type="button" class="btn" name="btn-buynow"
+                                            style="background: #e83e8c; color:white;width:48%">Buy
+                                            Now</button></a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- //blog grid -->
                 </div>
-                <!-- //blog grid -->
-            </div>
-            <!-- blog grid -->
-            <?php
+                <!-- blog grid -->
+                <?php
                 $card++;
                 if ($card == 3) { ?>
                 </div>
@@ -153,4 +156,4 @@
                 }
             }
             ?>
-<!-- //single -->
+            <!-- //single -->

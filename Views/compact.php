@@ -151,8 +151,8 @@
                                 <div class="text-center"><br><br>
                                     <a href="addcart?productid=<?php echo $value->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
-                                    <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy
-                                        Now</button>
+                                    <a href="buynow"> <button type="button" class="btn" name="btn-buynow" style="background: #e83e8c; color:white;width:48%">Buy
+                                        Now</button></a>
                                 </div>
                             </div>
                         </div>

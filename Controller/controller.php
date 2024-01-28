@@ -35,6 +35,12 @@ class controller extends Model
                     include_once("Views/about.php");
                     include_once("Views/footer.php");
                     break;
+                case '/abo':
+                    include_once("Views/header.php");
+                    include_once("Views/abo.php");
+                    include_once("Views/footer.php");
+                    break;
+                
                 case '/contact':
                     include_once("Views/header.php");
                     include_once("Views/contact.php");
@@ -177,13 +183,22 @@ class controller extends Model
                     include_once("Views/shampoo&conditioner.php");
                     include_once("Views/footer.php");
                     break;
-                // case '/allgallery':
-                //     $gallerydata = $this->select("gallery", array("g_id" => "2"));
-                //     include_once("Views/header.php");
-                //     include_once("Views/gallery.php");
-                //     include_once("Views/footer.php");
-                //     break;
+                case '/buynow':
+                    // include_once("Views/header.php");
+                    include_once("Views/buynow.php");
+                    // include_once("Views/footer.php");
+                    $Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
+                    $dt = array(
+                        'p_id' => $Data['Data'][0]->p_id,
+                        'c_name' => $_SESSION['UserData']->username,
+                        'p_quantity' => 1,
+                        'p_price' => $Data['Data'][0]->p_price,
+                        'p_amount' => $Data['Data'][0]->p_price,
+                    );
 
+                    $added = $this->insert('cart', $dt);
+                    header("location:checkout");
+                    break;
                 // ===========================Admin panel=========================
 
                 case '/allusers':
@@ -408,7 +423,7 @@ class controller extends Model
                     break;
                 case '/product':
                     // $allproduct = $this->select("pro");
-                    $allproduct = $this->selectjoin('pro', array('subcategory'=>'subcategory.sc_id = pro.sc_id'));
+                    $allproduct = $this->selectjoin('pro', array('subcategory' => 'subcategory.sc_id = pro.sc_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allproduct.php");
                     include_once("Views/Admin/footer.php");

@@ -147,8 +147,8 @@
                                 <?php echo $value->p_price; ?>
                                 <div class="text-center"><br>
                                     <button type="button" class="btn" style="width:48%">Add To Cart</button>
-                                    <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy
-                                        Now</button>
+                                    <a href="buynow"> <button type="button" class="btn" name="btn-buynow" style="background: #e83e8c; color:white;width:48%">Buy
+                                        Now</button></a>
                                 </div>
                             </div>
                         </div>
