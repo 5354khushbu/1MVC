@@ -86,7 +86,7 @@ class Model
         return $Res;
 
     }
-    function selectjoin($tbl1, $where,$whr)
+    function selectjoin($tbl1, $where)
     {
         // $SQL = "SELECT $clm FROM $tbl ";
         $SQL="SELECT * FROM $tbl1";

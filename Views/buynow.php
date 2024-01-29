@@ -200,9 +200,8 @@
                 <h2>Address</h2>
                 <div class="card">
                     <address>
-                        Adam Johnson<br />
-                        403 Oakland Ave Street, A city, Florida, 32104,<br />
-                        United States of America
+                        khushbu <br>
+                        A-403 Saligram plus , opp.vishwakarma temple , chandlodiya,Ahmedabad
                     </address>
                 </div>
             </div>

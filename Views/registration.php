@@ -70,7 +70,7 @@
                     <div class="row mt-3">
                         <div class="col">
                             <label for="address">Address</label>
-                            <textarea name="address" id="address" class="form-control" cols="30" rows="3"
+                            <textarea name="address" class="form-control" cols="30" rows="3"
                                 required></textarea>
                         </div>
                     </div>
