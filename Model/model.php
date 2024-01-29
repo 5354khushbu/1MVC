@@ -86,13 +86,19 @@ class Model
         return $Res;
 
     }
-    function selectjoin($tbl1, $where)
+    function selectjoin($tbl1, $where,$whr)
     {
         // $SQL = "SELECT $clm FROM $tbl ";
-
         $SQL="SELECT * FROM $tbl1";
         foreach ($where as $key => $value) {
             $SQL .= " LEFT JOIN $key on $value ";
+        }
+        if ($whr != "") {
+            $SQL .= " WHERE ";
+            foreach ($whr as $key => $value) {
+                $SQL .= "$key = '$value'";
+            }
+            $SQL = rtrim($SQL, "AND");
         }
         // echo "<pre>";
         // echo $SQL;

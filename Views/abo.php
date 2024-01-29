@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,9 @@
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    h1, h2 {
+
+    h1,
+    h2 {
       color: #333;
     }
 
@@ -32,29 +35,58 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>About Us</h1>
 
-    <p>Welcome to Beauty Shop, your ultimate destination for all your beauty and skincare needs. We are passionate about providing high-quality beauty products that enhance your natural beauty and make you feel confident every day.</p>
+    <p>Welcome to Beauty Shop, your ultimate destination for all your beauty and skincare needs. We are passionate about
+      providing high-quality beauty products that enhance your natural beauty and make you feel confident every day.</p>
 
     <h2>Our Mission</h2>
 
-    <p>At Beauty Shop, our mission is to empower individuals to look and feel their best by offering a curated selection of premium beauty and skincare products. We believe that beauty is unique to every person, and our diverse range of products caters to all skin types, tones, and preferences.</p>
+    <p>At Beauty Shop, our mission is to empower individuals to look and feel their best by offering a curated selection
+      of premium beauty and skincare products. We believe that beauty is unique to every person, and our diverse range
+      of products caters to all skin types, tones, and preferences.</p>
 
     <h2>Our Products</h2>
 
-    <p>Discover a world of beauty with our extensive collection of cosmetics, skincare, haircare, and fragrance products. We carefully select each item to ensure it meets our high standards for quality, effectiveness, and safety. From trendy makeup essentials to nourishing skincare solutions, we have everything you need to pamper yourself.</p>
+    <p>Discover a world of beauty with our extensive collection of cosmetics, skincare, haircare, and fragrance
+      products. We carefully select each item to ensure it meets our high standards for quality, effectiveness, and
+      safety. From trendy makeup essentials to nourishing skincare solutions, we have everything you need to pamper
+      yourself.</p>
 
     <h2>Why Choose Beauty Shop?</h2>
 
-    <p>- Premium Quality: We source our products from reputable brands known for their commitment to quality and innovation.</p>
-    <p>- Diverse Selection: Our catalog includes a wide range of products to suit every style, skin type, and beauty preference.</p>
-    <p>- Customer Satisfaction: Your satisfaction is our priority. We strive to provide excellent customer service and a seamless shopping experience.</p>
+    <p>- Premium Quality: We source our products from reputable brands known for their commitment to quality and
+      innovation.</p>
+    <p>- Diverse Selection: Our catalog includes a wide range of products to suit every style, skin type, and beauty
+      preference.</p>
+    <p>- Customer Satisfaction: Your satisfaction is our priority. We strive to provide excellent customer service and a
+      seamless shopping experience.</p>
 
     <h2>Contact Us</h2>
 
-    <p>Have questions or need assistance? We're here to help! Contact our customer support team at support@beautyshop.com or call us at (123) 456-7890.</p>
+    <p>Have questions or need assistance? We're here to help! Contact our customer support team at
+      support@beautyshop.com or call us at (123) 456-7890.</p>
   </div>
 </body>
+
 </html>
+
+<h1>add cart controller:-</h1>
+                  // print_r($_REQUEST);
+                  $Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
+                  $dt = array(
+                  'p_id' => $Data['Data'][0]->p_id,
+                  'c_name' => $_SESSION['UserData']->username,
+                  'p_quantity' => 1,
+                  'p_price' => $Data['Data'][0]->p_price,
+                  'p_amount' => $Data['Data'][0]->p_price,
+                  );
+
+                  $added = $this->insert('cart', $dt);
+                  // if ($added == 1)
+
+                  // alert
+                  break;

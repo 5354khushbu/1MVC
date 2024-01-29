@@ -40,7 +40,7 @@ class controller extends Model
                     include_once("Views/abo.php");
                     include_once("Views/footer.php");
                     break;
-                
+
                 case '/contact':
                     include_once("Views/header.php");
                     include_once("Views/contact.php");
@@ -91,26 +91,7 @@ class controller extends Model
                         }
                     }
                     break;
-                case '/addcart':
-                    // print_r($_REQUEST);
-                    $Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
-                    // echo "<pre>";
-                    // print_r($Data['Data'][0]);
-                    // print_r($_SESSION);
 
-                    $dt = array(
-                        'p_id' => $Data['Data'][0]->p_id,
-                        'c_name' => $_SESSION['UserData']->username,
-                        'p_quantity' => 1,
-                        'p_price' => $Data['Data'][0]->p_price,
-                        'p_amount' => $Data['Data'][0]->p_price,
-                    );
-
-                    $added = $this->insert('cart', $dt);
-                    // if ($added == 1) 
-
-                    // alert
-                    break;
                 case '/forgetpassword':
                     include_once("Views/header.php");
                     include_once("Views/forgetpassword.php");
@@ -187,17 +168,6 @@ class controller extends Model
                     // include_once("Views/header.php");
                     include_once("Views/buynow.php");
                     // include_once("Views/footer.php");
-                    $Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
-                    $dt = array(
-                        'p_id' => $Data['Data'][0]->p_id,
-                        'c_name' => $_SESSION['UserData']->username,
-                        'p_quantity' => 1,
-                        'p_price' => $Data['Data'][0]->p_price,
-                        'p_amount' => $Data['Data'][0]->p_price,
-                    );
-
-                    $added = $this->insert('cart', $dt);
-                    header("location:checkout");
                     break;
                 // ===========================Admin panel=========================
 
@@ -808,7 +778,7 @@ class controller extends Model
                     break;
                 case '/checkout':
                     if (isset($_SESSION['UserData'])) {
-                        $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'));
+                        $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.c_id' => $_SESSION['UserData']->c_id));
                         include_once("Views/checkout.php");
                     } else {
                         header("location:login");
@@ -824,6 +794,65 @@ class controller extends Model
                         }
                     } catch (\Exception $e) {
                         echo $e->getMessage();
+                    }
+                    break;
+                case '/addcart':
+                    // print_r($_REQUEST);
+                    $Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
+                    $CartData = $this->select('cart', array('c_id' => $_SESSION['UserData']->c_id));
+                    // echo "<pre>";
+                    // print_r($CartData);
+
+                    // print_r($_SESSION['UserData']->c_id);
+                    $CartFlag = false;
+                    $Cartid = 0;
+                    foreach ($CartData['Data'] as $key => $value) {
+                        // $value->p_id;
+                        // echo "inside foreach";
+                        if ($value->p_id == $_REQUEST['productid']) {
+                            // echo "inside if";
+                            $CartFlag = true;
+                            $Cartid = $value->cart_id;
+                            $p_quantity = (int) $value->p_quantity;
+                            // var_dump($p_quantity);
+                            $Quantity = (int) $p_quantity + (int) 1;
+                            // var_dump($Quantity);
+                            // echo "Quantity"+$Quantity;
+                            $dt = array(
+                                'p_id' => $Data['Data'][0]->p_id,
+                                'c_id' => $_SESSION['UserData']->c_id,
+                                'p_quantity' => $Quantity,
+                                'p_price' => $Data['Data'][0]->p_price,
+                                'p_amount' => $Data['Data'][0]->p_price * $Quantity,
+                            );
+
+                            $added = $this->update('cart', $dt, array('c_id' => $_SESSION['UserData']->c_id, "cart_id" => $Cartid));
+                        }
+                    }
+                    // echo "</pre>";
+                    // echo "outside loop";
+                    // exit;
+                    if ($CartFlag) {
+                    } else {
+                        # code...
+                        $dt = array(
+                            'p_id' => $Data['Data'][0]->p_id,
+                            'c_id' => $_SESSION['UserData']->c_id,
+                            'p_quantity' => 1,
+                            'p_price' => $Data['Data'][0]->p_price,
+                            'p_amount' => $Data['Data'][0]->p_price,
+                        );
+
+                        $added = $this->insert('cart', $dt);
+                    }
+
+                    if ($added['Data'] == 1) 
+                    {
+                    echo "<script>alert('product has been added into cart')</script>";
+                    }
+                    else
+                    {
+                    header('location:checkout');
                     }
                     break;
                 default:

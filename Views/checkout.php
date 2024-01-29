@@ -58,7 +58,7 @@
                                             <button class="btn btn-white border-secondary bg-white btn-md mb-2">
                                                 <i class="fas fa-sync"></i>
                                             </button>
-                                            <a href="deletecheckout">
+                                            <a href="deletecheckout?cart_id=<?php echo $value->cart_id?>">
                                                 <button class="btn btn-white border-secondary bg-white btn-md mb-2">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
@@ -79,10 +79,10 @@
             </div>
             <div class="row mt-3 d-flex align-items-center">
                 <div class="col-sm-6 order-md-2 text-right">
-                    <a href="catalog.html" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Proceed to Order</a>
+                    <a href="buynow" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Proceed to Order</a>
                 </div>
                 <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
-                    <a href="catalog.html">
+                    <a href="buynow">
                 </div>
             </div>
         </div>

@@ -124,73 +124,179 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<section class="banner-sec py-sm-5 pt-3 pb-5">
 		<div class="container">
 			<div class="container">
-				<h1>About Us</h1>
-
+				<h2><i>About Us</i></h2>
 				<p>
-				<h6>Welcome to Beauty Shop, your ultimate destination for all your beauty and skincare needs.<br> We are
-					passionate about providing high-quality beauty products that enhance your natural<br>
+				<h6>Welcome to Beauty Shop, your ultimate destination for all your beauty and skincare needs.We are
+					passionate about providing high-quality beauty products that enhance your natural
 					beauty and make you feel confident every day.</h6>
-				</p>
-
-
+				</p><br>
 			</div>
+			<div class="container">
+				<h2><i>Our Products</i></h2><br>
+				<h4>Makeup</h4>
+				<p>
+				<h6>
+					Makeup consists of things such as lipstick, eye shadow, and powder which some women put on their
+					faces to make themselves look more attractive or which actors use to change or improve their
+					appearance. </h6>
+				</p><br>
+			</div>
+			<div class="container">
+				<h4>Skin care</h4>
+				<p>
+				<h6>
+					the cleansing, massaging, moisturizing, etc., of the skin, especially the face or hands.
+				</h6>
+				</p><br>
+			</div>
+			<div class="container">
+				<h4>Hair care</h4>
+				<p>
+				<h6>
+					Hair care is all the things people do to keep their hair clean, healthy-looking, and attractive.
+				</h6>
+				</p>
+			</div>
+			<br>
+			<h2>Why Choose Beauty Shop?</h2>
+			<br>
+			<p>
+			<h5>- Premium Quality: We source our products from reputable brands known for their commitment to quality
+				and innovation</h5>.</p>
+
+			<p>
+			<h5>- Customer Satisfaction: Your satisfaction is our priority. We strive to provide excellent customer
+				service and a seamless shopping experience.</h5>
+			</p>
+
+
 	</section>
 	<section class="section-01 py-sm-5 pt-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-md-12">
-					<div class="row">
-						<div class="col-lg-6 mt-sm-5">
+				<div class="row inner_sec_info pt-md-4">
+					<!-- left side -->
+					<div class="col-lg-4">
+						<!-- blog grid -->
+						<div class="full_width_blog_grid">
 							<div class="card">
-								<img class="img-fluid" src="<?php echo $this->base_url; ?>images/lip.avif" alt="" />
-								<div class="card-body">
-									<div class="news-title">
-										<a href="single.html" class="blog-btn text-dark">Nykaa So Matte Lipstick - Pink
-											Brat 05 M</a><br>
-										<a href="single.html" class="blog-btn text-dark">MRP:₹199</a>
-									</div>
+								<div class="card-header p-0">
+									<a href="single.html">
+										<img class="card-img-bottom" height="350px"
+											src="<?php echo $this->base_url; ?>images/lip.avif" alt="Card image cap">
+									</a>
 								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 mb-lg-5 mt-5">
-							<div class="card">
-								<img class="img-fluid" height="400px" src="<?php echo $this->base_url; ?>images/c3.jpg"
-									alt="" />
 								<div class="card-body">
-									<div class="news-title">
-										Super Soft Makeup Brush Set 
-										<br>
-										MRP:₹119
-									</div>
+									Nykaa So Matte Lipstick - Pink
+									Brat 05 M<br>
+									MRP:₹279
 
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6 my-lg-0 mt-5">
+						<!-- //blog grid -->
+					</div>
+					<!-- blog grid -->
+					<div class="col-lg-4">
+						<div class="full_width_blog_grid">
 							<div class="card">
-								<img class="img-fluid" src="<?php echo $this->base_url; ?>images/e2.jpg" alt="" />
+								<div class="card-header p-0">
+									<a href="single.html">
+										<img class="card-img-bottom" height="350px"
+											src="<?php echo $this->base_url; ?>images/aaa.webp" alt="Card image cap">
+									</a>
+								</div>
 								<div class="card-body">
-									<div class="news-title">
-										<a href="single.html" class="blog-btn text-dark">Black Liquid Eyeliner | Free
-											Flow Eyeliner</a><br>
-										<a href="single.html" class="blog-btn text-dark">MRP:₹199</a>
-									</div>
+									Super Soft Makeup Brush Set<br>
+									MRP:₹279<br>
+
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6 my-lg-0 my-5">
+						<!-- //blog grid -->
+					</div>
+					<!-- blog grid -->
+					<div class="col-lg-4">
+						<div class="full_width_blog_grid">
 							<div class="card">
-								<img class="img-fluid" src="<?php echo $this->base_url; ?>images/g7.jpg" alt="">
+								<div class="card-header p-0">
+									<a href="single.html">
+										<img class="card-img-bottom " height="350px"
+											src="<?php echo $this->base_url; ?>images/eyeshadow3.jpg"
+											alt="Card image cap">
+									</a>
+								</div>
 								<div class="card-body">
-									<div class="news-title">
-										<a href="single.html">Eyeshadow + compact powder + Makeup brush</a><br>
-										<a href="single.html" class="text-dark">MRP:₹399</a>
+									Eyeshadow + compact powder+brush <br>
+									MRP:₹279<br>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row inner_sec_info pt-md-4">
+						<!-- left side -->
+						<div class="col-lg-4">
+							<!-- blog grid -->
+							<div class="full_width_blog_grid">
+								<div class="card">
+									<div class="card-header p-0">
+										<a href="single.html">
+											<img class="card-img-bottom" height="350px"
+												src="<?php echo $this->base_url; ?>images/shampoo5.webp"
+												alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										Aaryanveda Keratin Shampoo&Conditioner
+										<br>
+										MRP:₹279
+										
+									</div>
+								</div>
+							</div>
+							<!-- //blog grid -->
+						</div>
+						<!-- blog grid -->
+						<div class="col-lg-4">
+							<div class="full_width_blog_grid">
+								<div class="card">
+									<div class="card-header p-0">
+										<a href="single.html">
+											<img class="card-img-bottom"
+											height="350px" src="<?php echo $this->base_url; ?>images/f9.jpg" alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										FULL COVERAGE FOUNDATION<br>
+										MRP:₹279<br>
+										
+									</div>
+								</div>
+							</div>
+							<!-- //blog grid -->
+						</div>
+						<!-- blog grid -->
+						<div class="col-lg-4">
+							<div class="full_width_blog_grid">
+								<div class="card">
+									<div class="card-header p-0">
+										<a href="single.html">
+											<img class="card-img-bottom" height="350px" src="<?php echo $this->base_url; ?>images/sheetmask33.webp"
+												alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										sheetmask <br>
+										MRP:₹279<br>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
 			</div>
 		</div>
 	</section>
