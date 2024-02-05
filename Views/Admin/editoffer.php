@@ -26,13 +26,13 @@
                     <div class="row mt-3">
                         <div class="col">
                         <label for="offerstartdate" class="input__label"><b>Offer Start Date</b></label>
-                            <input type="tel" placeholder="Enter Offer Start Date " class="form-control" name="of_startdate" value="<?php echo $editoffers['Data'][0]->of_startdate ?>" id="">
+                            <input type="date" placeholder="Enter Offer Start Date " class="form-control" name="of_startdate" value="<?php echo $editoffers['Data'][0]->of_startdate ?>" id="">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
                         <label for="offerenddate" class="input__label"><b>Offer End Date</b></label>
-                            <input type="tel" placeholder="Enter Offer End Date " class="form-control" name="of_enddate" value="<?php echo $editoffers['Data'][0]->of_enddate ?>" id="">
+                            <input type="date" placeholder="Enter Offer End Date " class="form-control" name="of_enddate" value="<?php echo $editoffers['Data'][0]->of_enddate ?>" id="">
                         </div>
                     </div>
                     <div class="row mt-3">

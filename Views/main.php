@@ -276,14 +276,17 @@
 						<div class="card-header p-0">
 							<a href="single.html">
 								<img class="card-img-bottom" height="350px"
-									src="<?php echo $this->base_url; ?>images/f123.jpg" alt="Card image cap">
+									src="<?php echo $this->base_url . "images/" . $data['Data'][68]->p_image ?>"
+									alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body">
-							Lakme facewash<br>
-							MRP:₹279
+							<?php echo $data['Data'][68]->p_des ?><br>
+							MRP:₹
+							<?php echo $data['Data'][68]->p_price ?>
 							<div class="text-center"><br>
-								<button type="button" class="btn" style="width:48%">Add To Cart</button>
+							<a href="addcart?productid=<?php echo $data['Data'][68]->p_id; ?>"><button type="button" class="btn"
+                                            style="width:48%">Add To Cart</button></a>
 								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
@@ -299,15 +302,17 @@
 					<div class="card">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/f9.jpg"
+								<img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $data['Data'][69]->p_image ?>"
 									alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body">
-							FULL COVERAGE FOUNDATION<br>
-							MRP:₹279<br>
+						<?php echo $data['Data'][69]->p_des ?><br>
+							MRP:₹
+							<?php echo $data['Data'][69]->p_price ?>
 							<div class="text-center"><br>
-								<button type="button" class="btn" style="width:48%">Add To Cart</button>
+							<a href="addcart?productid=<?php echo $data['Data'][69]->p_id; ?>"><button type="button" class="btn"
+                                            style="width:48%">Add To Cart</button></a>
 								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
@@ -324,14 +329,17 @@
 						<div class="card-header p-0">
 							<a href="single.html">
 								<img class="card-img-bottom h-100"
-									src="<?php echo $this->base_url; ?>images/sheetmask33.webp" alt="Card image cap">
+								src="<?php echo $this->base_url . "images/" . $data['Data'][49]->p_image ?>"
+									alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body">
-							sheetmask <br>
-							MRP:₹279<br>
+						<?php echo $data['Data'][69]->p_des ?><br>
+							MRP:₹
+							<?php echo $data['Data'][69]->p_price ?>
 							<div class="text-center"><br>
-								<button type="button" class="btn" style="width:48%">Add To Cart</button>
+							<a href="addcart?productid=<?php echo $data['Data'][69]->p_id; ?>"><button type="button" class="btn"
+                                            style="width:48%">Add To Cart</button></a>
 								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
@@ -349,15 +357,17 @@
 					<div class="card">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/oil5.webp"
+								<img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $data['Data'][65]->p_image ?>"
 									alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body">
-							21 Herbs Herbal Hair Oil <br>
-							MRP:₹199<br>
+						<?php echo $data['Data'][65]->p_des ?><br>
+							MRP:₹
+							<?php echo $data['Data'][65]->p_price ?>
 							<div class="text-center"><br>
-								<button type="button" class="btn" style="width:48%">Add To Cart</button>
+							<a href="addcart?productid=<?php echo $data['Data'][65]->p_id; ?>"><button type="button" class="btn"
+                                            style="width:48%">Add To Cart</button></a>
 								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
@@ -373,13 +383,16 @@
 					<div class="card">
 						<div class="card-header p-0">
 							<img class="card-img-bottom" height="350px"
-								src="<?php echo $this->base_url; ?>images/eye4.webp" alt="Card image cap">
+							src="<?php echo $this->base_url . "images/" . $data['Data'][24]->p_image ?>"
+									alt="Card image cap">
 						</div>
 						<div class="card-body">
-							BEAUTY Nude Edition Eyeshadow Palette<br>
-							MRP:₹249 <br>
+						<?php echo $data['Data'][24]->p_des ?><br>
+							MRP:₹
+							<?php echo $data['Data'][24]->p_price ?>
 							<div class="text-center"><br>
-								<button type="button" class="btn" style="width:48%">Add To Cart</button>
+							<a href="addcart?productid=<?php echo $data['Data'][24]->p_id; ?>"><button type="button" class="btn"
+                                            style="width:48%">Add To Cart</button></a>
 								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
@@ -394,14 +407,16 @@
 				<div class="full_width_blog_grid">
 					<div class="card">
 						<div class="card-header p-0">
-							<img class="card-img-bottom" src="<?php echo $this->base_url; ?>images/comp5.avif"
-								alt="Card image cap">
+							<img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $data['Data'][5]->p_image ?>"
+									alt="Card image cap">
 						</div>
 						<div class="card-body">
-							mamaearth Compact powder<br>
-							MRP:₹259
+						<?php echo $data['Data'][5]->p_des ?><br>
+							MRP:₹
+							<?php echo $data['Data'][5]->p_price ?>
 							<div class="text-center"><br>
-								<button type="button" class="btn" style="width:48%">Add To Cart</button>
+							<a href="addcart?productid=<?php echo $data['Data'][5]	->p_id; ?>"><button type="button" class="btn"
+                                            style="width:48%">Add To Cart</button></a>
 								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>

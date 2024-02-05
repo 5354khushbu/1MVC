@@ -203,11 +203,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span>Checkout</span>
 							</a>
 						</li>
-						<!-- <li class="treeview">
+						<li class="treeview">
 							<a href="gallery">
 								<span>Gallery</span>
 							</a>
-						</li> -->
+						</li>
 						<li class="treeview">
 							<a href="contact">
 								<span>Contact</span>

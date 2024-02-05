@@ -25,7 +25,6 @@
                                                 id="">
                                         </div>
                                     </div>
-
                                     <div class="row mt-3">
                                         <div class="col">
                                             <label for="mobile" class="input__label"><b>Mobile</b></label>
@@ -42,7 +41,6 @@
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col">
-
                                             <input type="radio" <?php if ($UserById['Data'][0]->gender == "Male") {
                                                 echo "checked";
                                             } ?> value="Male" name="gender" id="Male"> <label
@@ -57,17 +55,15 @@
                                         <div class="col text-center">
                                             <select name="city" class="form-control" id="city">
                                                 <option value="">--Select City--</option>
-                                                <?php
-                                                foreach ($CitiesData['Data'] as $key => $value) {
-                                                    echo $value->id == $UserById['Data'][0]->city ?>
-                                                    <option <?php if ($value->name == $UserById['Data'][0]->city) {
-                                                        echo "selected";
-                                                    } ?> value="<?php echo $value->name; ?>">
-                                                        <?php echo $value->name; ?>
-                                                    </option>
-                                                <?php } ?>
-
+                                               
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col">
+                                            <label for="mobile" class="input__label"><b>Address</b></label>
+                                            <input type="text" placeholder="Enter Address" class="form-control"
+                                                name="address" value="<?php echo $UserById['Data'][0]->address ?>" id="">
                                         </div>
                                     </div>
                                     <div class="row mt-3">
@@ -85,3 +81,16 @@
             </div>
         </div>
     </div>
+<script>
+    fetchcity();
+    function fetchcity() {
+        fetch(`http://localhost/1MVC/getcity`).then((res) => res.json()).then((kaipan) => {
+            console.log(kaipan);
+            let optioncity = '<option hidden>city</option>';
+            kaipan.forEach(element => {
+                optioncity += `<option value="${element.city_name}">${element.city_name}</option>`
+            });
+            $("#city").html(optioncity);
+        })
+    }
+</script>

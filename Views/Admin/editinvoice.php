@@ -44,7 +44,7 @@
                                     <div class="row mt-3">
                                         <div class="col">
                                         <label for="invoicedate" class="input__label"><b>Invoice Date</b></label>
-                                            <input type="tel" placeholder="Enter Invoice Date" required
+                                            <input type="date" placeholder="Enter Invoice Date" required
                                                 class="form-control" name="i_date"
                                                 value="<?php echo $editinvoicedata['Data'][0]->i_date ?>" id="">
                                         </div>
@@ -87,7 +87,6 @@
                                     function total(e) {
                                         let price = document.getElementById("price");
                                         let qun = document.getElementById("quantity");
-
                                         document.getElementById("total_price").value = price.value * qun.value;
                                     }
                                 </script>

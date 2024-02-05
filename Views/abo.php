@@ -74,7 +74,7 @@
 
 </html>
 
-<h1>add cart controller:-</h1>
+<!-- <h1>add cart controller:-</h1>
                   // print_r($_REQUEST);
                   $Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
                   $dt = array(
@@ -87,6 +87,60 @@
 
                   $added = $this->insert('cart', $dt);
                   // if ($added == 1)
-
                   // alert
-                  break;
+                  break; -->
+
+<?php
+// <h1>cart controller:-</h1>
+// print_r($_REQUEST);
+$Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
+$Data = $this->select('pro', array('p_id' => $_REQUEST['productname']));
+$Data = $this->select('pro', array('p_id' => $_REQUEST['productprice']));
+$Data = $this->select('pro', array('p_id' => $_REQUEST['productquantity']));
+$Data = $this->select('pro', array('p_id' => $_REQUEST['productTotalprice']));
+$dt = array(
+  'p_id' => $Data['Data'][0]->p_id,
+  'c_name' => $_SESSION['UserData']->username,
+  'p_quantity' => 2,
+  'p_price' => $Data['Data'][0]->p_quantity,
+  'p_amount' => $Data['Data'][0]->p_price,
+);
+
+$added = $this->insert('cart', $dt);
+if ($added['Data'] == 1) {
+    header("location:abo");
+} else {
+    alert("<script>product has been added into the cart</script");
+}
+
+
+
+$Data = $this->select('order', array('o_id' => $_REQUEST['orderid']));
+$Data = $this->select('order', array('c_id' => $_REQUEST['username']));
+$Data = $this->select('order', array('p_id' => $_REQUEST['productid']));
+$Data = $this->select('order', array('orderstartdate' => $_REQUEST['orderstartdate']));
+$Data = $this->select('order', array('orderenddate' => $_REQUEST['orderenddate']));
+$dt = array(
+  'o_id' => $Data['Data'][0]->p_id,
+  'c_name' => $_SESSION['UserData']->username,
+  'p_quantity' => 2,
+  'p_price' => $Data['Data'][0]->p_quantity,
+  'p_amount' => $Data['Data'][0]->p_price,
+);
+
+$added = $this->insert('cart', $dt);
+if ($added['Data'] == 1) {
+    header("location:abo");
+} else {
+    alert("<script>product has been added into the cart</script");
+}
+
+?>
+<h1>PHP </h1>
+<h1>PHP </h1>
+<h1>PHP </h1>
+<h1>PHP </h1>
+<h1>PHP </h1>
+<h1>PHP </h1>
+<h1>PHP </h1>
+<h1>PHP </h1>

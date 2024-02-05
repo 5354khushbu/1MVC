@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h1>
                 <a href="index.html" class="text-center">
                     beauty
-                    <span class="d-block">Blog</span>
+                    <span class="d-block">Shop</span>
                 </a>
             </h1>
         </div>

@@ -137,7 +137,7 @@
                                 <img class="card-img-bottom"
                                     src="<?php echo $this->base_url . "images/" . $value->p_image; ?>" alt="Card image cap">
                             </div>
-                            <div class="card-body">
+                            <div class="card-body"> 
                                 <?php echo $value->p_des ?><br>
                                 MRP:₹<?php echo $value->p_price ?>
                                 <div class="text-center"><br>

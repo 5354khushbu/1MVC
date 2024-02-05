@@ -29,6 +29,9 @@
                     <h6 class="fw-semibold mb-0">City</h6>
                   </th>
                   <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Address</h6>
+                  </th>
+                  <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Action</h6>
                   </th>
                 </tr>
@@ -69,6 +72,12 @@
                     <td class="border-bottom-0">
                       <p class="mb-0 fw-normal">
                         <?php echo $value->city; ?>
+                      </p>
+                      <!-- <h6 class="fw-semibold mb-0 fs-4">$3.9</h6> -->
+                    </td>
+                    <td class="border-bottom-0">
+                      <p class="mb-0 fw-normal">
+                        <?php echo $value->address; ?>
                       </p>
                       <!-- <h6 class="fw-semibold mb-0 fs-4">$3.9</h6> -->
                     </td>

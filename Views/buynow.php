@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        @use postcss-preset-env {
-            stage: 0;
-        }
 
         :root {
             --color-background: #fae3ea;
@@ -192,7 +189,7 @@
    <section>
    <div class="iphone">
         <header class="header">
-            <h1>Checkout</h1>
+            <h1>Buy Now</h1>
         </header>
 
         <form action="https://httpbin.org/post" class="form" method="POST">
@@ -201,7 +198,7 @@
                 <div class="card">
                     <address>
                         khushbu <br>
-                        A-403 Saligram plus , opp.vishwakarma temple , chandlodiya,Ahmedabad
+                        A-403 Saligram Plus , opp.Vishwakarma temple , Chandlodiya , Ahmedabad
                     </address>
                 </div>
             </div>

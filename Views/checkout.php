@@ -29,7 +29,9 @@
                         </thead>
 
                         <?php
+                        $totalprice=0;
                         foreach ($checkout['Data'] as $key => $value) {
+                            $totalprice+=($value->p_price*$value->p_quantity);
                             ?>
 
                             <tbody>
@@ -55,9 +57,9 @@
                                     </td>
                                     <td class="actions" data-th="">
                                         <div class="text-right">
-                                            <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                            <!-- <button class="btn btn-white border-secondary bg-white btn-md mb-2">
                                                 <i class="fas fa-sync"></i>
-                                            </button>
+                                            </button> -->
                                             <a href="deletecheckout?cart_id=<?php echo $value->cart_id?>">
                                                 <button class="btn btn-white border-secondary bg-white btn-md mb-2">
                                                     <i class="fas fa-trash"></i>
@@ -72,7 +74,7 @@
                         ?>
                     </table>
                     <div class="float-right text-right">
-                        <h4>Subtotal: </h4>
+                        <h4>Subtotal : ₹<?php echo $totalprice ?> </h4>
                         <!-- <h1>$99.00</h1> -->
                     </div>
                 </div>

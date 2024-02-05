@@ -93,13 +93,16 @@ class Model
         foreach ($where as $key => $value) {
             $SQL .= " LEFT JOIN $key on $value ";
         }
-        if ($whr != "") {
-            $SQL .= " WHERE ";
-            foreach ($whr as $key => $value) {
-                $SQL .= "$key = '$value'";
-            }
-            $SQL = rtrim($SQL, "AND");
-        }
+        // if ($whr != "") {
+        //     $SQL .= " WHERE ";
+        //     foreach ($whr as $key => $value) {
+        //         $SQL .= "$key = '$value'";
+        //     }
+        //     $SQL = rtrim($SQL, "AND");
+        // }
+
+
+        
         // echo "<pre>";
         // echo $SQL;
         // exit;
@@ -175,6 +178,7 @@ class Model
             $Res['Msg'] = "Try again";
         }
         return $Res;
+        
     }
     function delete($tbl, $whr = "")
     {
@@ -190,7 +194,7 @@ class Model
         $SQLEx = $this->connection->query($SQL);
         if ($SQLEx > 0) {
             $Res['Code'] = 1;
-            $Res['Data'] = 1;
+            $Res['Data'] = 1;   
             $Res['Msg'] = "Success";
         } else {
             $Res['Code'] = 0;

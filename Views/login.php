@@ -1,18 +1,18 @@
 <div class="row">
         <div class="col-lg-4 offset-lg-4 pt-8">
             <div class="card border-primary mb-3">
-                <div class="card-header text-center">Login</div>
+                <div class="card-header text-center"><h6>Login</h6></div>
                 <div class="card-body">
                     <form method="post">
                         <div class="row">
                             <div class="col">
-                                <input type="text" placeholder="Enter User Name" class="form-control" name="username" id="">
+                                <input type="text" placeholder="Enter User Name" required class="form-control" name="username" id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                                <input type="password" placeholder="Enter Password" class="form-control" name="password" id=""><br>
-                                <a href="forgetpassword">Forget your password?</a>
+                                <input type="password" placeholder="Enter Password" required class="form-control" name="password" id=""><br>
+                                <a href="sendemail">Forget your password?</a>
                             </div>
                         </div>
                         <div class="row mt-3">

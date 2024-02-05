@@ -57,7 +57,7 @@
                                     <div class="row mt-3">
                                         <div class="col">
                                             <label for="orderdate" class="input__label"><b>Order Date</b></label>
-                                            <input type="tel" placeholder="Enter Order Date " class="form-control"
+                                            <input type="date" placeholder="Enter Order Date " class="form-control"
                                                 name="orderdate" value="<?php echo $editorder['Data'][0]->orderdate ?>"
                                                 id="">
                                         </div>
@@ -65,7 +65,7 @@
                                     <div class="row mt-3">
                                         <div class="col">
                                             <label for="deliverydate" class="input__label"><b>Delivery Date</b></label>
-                                            <input type="tel" placeholder="Enter Delivery Date " class="form-control"
+                                            <input type="date" placeholder="Enter Delivery Date " class="form-control"
                                                 name="deliverydate"
                                                 value="<?php echo $editorder['Data'][0]->deliverydate ?>" id="">
                                         </div>

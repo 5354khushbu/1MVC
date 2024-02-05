@@ -1,5 +1,9 @@
 <?php
 session_start();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 require_once("Model/model.php");
 require 'vendor/autoload.php';
 // reference the Dompdf namespace
@@ -9,9 +13,11 @@ use Dompdf\Dompdf;
 
 class controller extends Model
 {
+    public $mail = "";
     public $base_url = "http://localhost/1MVC/Public/Assets/";
     public function __construct()
     {
+        $this->mail = new PHPMailer(true);
         ob_start();
         parent::__construct();
         // echo "inside constructor";
@@ -26,6 +32,10 @@ class controller extends Model
                 //============== User panel=================
                 case '/':
                 case '/home':
+                    $data=$this->select("pro");
+                    // echo "<pre>";
+                    // print_r($data['Data'][5]);
+                    // echo "</pre>";
                     include_once("Views/header.php");
                     include_once("Views/main.php");
                     include_once("Views/footer.php");
@@ -40,13 +50,16 @@ class controller extends Model
                     include_once("Views/abo.php");
                     include_once("Views/footer.php");
                     break;
-
                 case '/contact':
                     include_once("Views/header.php");
                     include_once("Views/contact.php");
                     include_once("Views/footer.php");
                     break;
-
+                case '/gallery':
+                    include_once("Views/header.php");
+                    include_once("Views/gallery.php");
+                    include_once("Views/footer.php");
+                    break;
                 case '/login':
                     include_once("Views/header.php");
                     include_once("Views/login.php");
@@ -91,8 +104,53 @@ class controller extends Model
                         }
                     }
                     break;
-
+                case '/getcity':
+                    $data = $this->select('cities');
+                    echo json_encode($data['Data']);
+                    break;
+                case '/sendemail':
+                    include_once("Views/header.php");
+                    include_once("Views/sendemail.php");
+                    include_once("Views/footer.php");
+                    if (isset($_POST['sendmail'])) {
+                        $mailexist = $this->select('users', array('email' => $_POST['email']));
+                        if ($mailexist['Code'] == 1) {
+                            $emailId = $_POST['email'];
+                            $OTP = random_int(100000, 999999);
+                            $this->update('users', array("otp" => $OTP), array("email" => $emailId));
+                            $msg = "Your Forgot password OTP is : $OTP  &ensp; OR &ensp; ";
+                            $msg .= "<a href='http://localhost/1MVC/forgetpassword?email=$emailId'>Click here to change your Password</a>";
+                            // echo "<pre>";
+                            // print_r($OTP);
+                            // echo "</pre>";
+                            $this->sendemail($emailId, $msg);
+                            header("location:forgetpassword?email=$emailId");
+                        } else {
+                            echo '<script>alert("This Email is Not exist..")</script>';
+                        }
+                    }
+                    break;
                 case '/forgetpassword':
+                    include_once("Views/header.php");
+                    include_once("Views/forgetpassword.php");
+                    include_once("Views/footer.php");
+                    $email = $_REQUEST['email'];
+                    $mainotp = $this->select('users', array("email" => $email));
+                    // echo "<pre>";
+                    // print_r($mainotp['data'][0]->otp);
+                    // echo "</pre>";
+                    if (isset($_REQUEST['confirmpassword'])) {
+                        // print_r($mainotp);
+                        if ($mainotp['Data'][0]->otp == $_REQUEST['otp']) {
+                            $this->update('users', array("password" => $_REQUEST['password']), array("email" => $email));
+
+                            header("location:login");
+                        } else {
+                            echo '<script>alert("Please Enter valid OTP..!")</script>';
+                        }
+                    }
+                    break;
+                case '/verify':
                     include_once("Views/header.php");
                     include_once("Views/forgetpassword.php");
                     include_once("Views/footer.php");
@@ -164,11 +222,13 @@ class controller extends Model
                     include_once("Views/shampoo&conditioner.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/buynow':
                     // include_once("Views/header.php");
                     include_once("Views/buynow.php");
                     // include_once("Views/footer.php");
                     break;
+
                 // ===========================Admin panel=========================
 
                 case '/allusers':
@@ -410,8 +470,8 @@ class controller extends Model
                                 "message" => "Choose image file to upload."
                             );
                         } else {
-                            $profilename = $_POST['productname'] . "_profile." . $file_extension;
-                            $target = "Public/Assets/images/" . $profilename;
+                            $profilename = $_POST['productname'] .$_FILES["profile_pic"]["name"] ;
+                            $target = "Public/Assets/images/".$profilename;
                             if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $target)) {
                                 $response = array(
                                     "type" => "success",
@@ -434,6 +494,7 @@ class controller extends Model
                             "p_image" => $imagename,
                             "p_des" => $_REQUEST['productdescription']
                         );
+                        // print_r($InsertData);
                         $res = $this->insert("pro", $InsertData);
                         // print_r($res['Code']);
                         if ($res['Code'] == 1) {
@@ -802,7 +863,6 @@ class controller extends Model
                     $CartData = $this->select('cart', array('c_id' => $_SESSION['UserData']->c_id));
                     // echo "<pre>";
                     // print_r($CartData);
-
                     // print_r($_SESSION['UserData']->c_id);
                     $CartFlag = false;
                     $Cartid = 0;
@@ -825,7 +885,6 @@ class controller extends Model
                                 'p_price' => $Data['Data'][0]->p_price,
                                 'p_amount' => $Data['Data'][0]->p_price * $Quantity,
                             );
-
                             $added = $this->update('cart', $dt, array('c_id' => $_SESSION['UserData']->c_id, "cart_id" => $Cartid));
                         }
                     }
@@ -842,17 +901,13 @@ class controller extends Model
                             'p_price' => $Data['Data'][0]->p_price,
                             'p_amount' => $Data['Data'][0]->p_price,
                         );
-
                         $added = $this->insert('cart', $dt);
                     }
-
-                    if ($added['Data'] == 1) 
-                    {
-                    echo "<script>alert('product has been added into cart')</script>";
-                    }
-                    else
-                    {
-                    header('location:checkout');
+                    if ($added['Code'] == 1) {
+                        echo '<script>alert("product has been added into cart")</script>';
+                        header("location:checkout");
+                    } else {
+                        echo '<script>alert("product can not add in cart")</script>';
                     }
                     break;
                 default:
@@ -863,6 +918,46 @@ class controller extends Model
         }
         ob_flush();
     }
+
+    function sendemail($email, $msg)
+    {
+        try {
+            //Server settings
+            // $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+            $this->mail->isSMTP();                                            //Send using SMTP
+            $this->mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $this->mail->SMTPAuth = true;                                   //Enable SMTP authentication
+            $this->mail->Username = 'khushburathod5354@gmail.com';                     //SMTP username
+            $this->mail->Password = 'dvcgklnwuebqqdfy';                               //SMTP password
+            $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $this->mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $this->mail->setFrom('khushburathod5354@gmail.com', 'Khushbu Rathod');
+            $this->mail->addAddress($email, 'Joe User');     //Add a recipient
+            // $this->mail->addAddress('ellen@example.com');               //Name is optional
+            $this->mail->addReplyTo('khushirathod0096@gmail.com', 'Information');
+            // $this->mail->addCC('cc@example.com');
+            // $this->mail->addBCC('bcc@example.com');
+
+            //Attachments
+            // $this->mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+            // $this->mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+            //Content
+            $this->mail->isHTML(true);                                  //Set email format to HTML
+            $this->mail->Subject = 'Forgot password OTP';
+            $this->mail->Body = $msg;
+            $this->mail->AltBody = 'Your Forgot password OTP is : ';
+
+            $this->mail->send();
+            return 'Message has been sent';
+        } catch (Exception $e) {
+            return "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
+        }
+    }
 }
+
+
 $controllerobj = new controller;
 ?>

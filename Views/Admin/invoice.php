@@ -235,7 +235,6 @@
 </head>
 
 <body>
-
     <div class="receipt-content">
         <div class="container bootstrap snippets bootdey">
             <div class="row">
@@ -289,13 +288,12 @@
                                         99383 <br>
                                         India <br>
                                         <a href="#">
-                                            vaishalopatel@gmail.com
+                                            vaishalipatel@gmail.com
                                         </a>
                                     </p>
                                 </div>
                             </div>
                         </div>
-
                         <div class="line-items">
                             <div class="table-responsive mt-5">
                                 <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
@@ -314,7 +312,6 @@
                                     </thead>
                                     <tbody>
                                         <?php
-
                                         foreach ($data['Data'] as $key => $value) {
                                             // echo "<pre>";
                                             // print_r($value->role_id);
