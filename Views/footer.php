@@ -1,5 +1,5 @@
 <!-- footer -->
-<div class="footer pt-lg-5 text-center">
+<div class="footer pt-lg-10 text-center col-12">
 	<div class="container">
 
 		<ul class="list-agileits py-4 border-bottom">

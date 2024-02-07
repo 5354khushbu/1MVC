@@ -53,7 +53,7 @@
 
         h1 {
             font-size: var(--font-size-h1);
-            line-height: 1.2;
+            line-height: 0;
             margin-block: 0 1.5em;
         }
 
@@ -128,17 +128,17 @@
             border-radius: 1em;
             background-color: var(--color-primary);
             color: #fff;
-            padding: 1em;
+            padding: 0.5em;
         }
 
         .form {
             display: grid;
-            gap: 2em;
+            gap: 1.5em;
         }
 
         .form__radios {
             display: grid;
-            gap: 1em;
+            gap: 0.5em;
         }
 
         .form__radio {
@@ -147,7 +147,7 @@
             border-radius: 1em;
             box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
             display: flex;
-            padding: 1em;
+            padding: 0.5em;
         }
 
         .form__radio label {
@@ -176,9 +176,9 @@
             background-color: #fbf6f7;
             background-image: linear-gradient(to bottom, #fbf6f7, #fff);
             border-radius: 2em;
-            block-size: 812px;
+            block-size: 670px;
             box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
-            inline-size: 375px;
+            inline-size: 500px;
             overflow: auto;
             padding: 2em;
         }
@@ -195,11 +195,9 @@
         <form action="https://httpbin.org/post" class="form" method="POST">
             <div>
                 <h2>Address</h2>
-                <div class="card">
-                    <address>
-                        khushbu <br>
-                        A-403 Saligram Plus , opp.Vishwakarma temple , Chandlodiya , Ahmedabad
-                    </address>
+                <div class="card" style="padding:15px 10px">
+                    <input type="text" name="name" id="name" value="<?php print_r($_SESSION['UserData']->username)?>" style="background-color: transparent; border:solid 1px; width:100%; border-radius:7px; margin-bottom:10px">
+                    <input type="text" name="address" id="address" value="<?php print_r($_SESSION['UserData']->address)?>" style="background-color: transparent; border:solid 1px; width:100%; border-radius:7px">
                 </div>
             </div>
             <fieldset>

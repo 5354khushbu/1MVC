@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>checkout</title>
 </head>
-
 <body>
     <section class="pt-5 pb-5">
         <div class="container">
@@ -23,6 +22,7 @@
                             <tr>
                                 <th style="width:60%">Product</th>
                                 <th style="width:12%">Price</th>
+                                <th style="width:60%">Discount</th>
                                 <th style="width:10%">Quantity</th>
                                 <th style="width:16%"></th>
                             </tr>
@@ -30,8 +30,12 @@
 
                         <?php
                         $totalprice=0;
+                        $discount=0;
                         foreach ($checkout['Data'] as $key => $value) {
                             $totalprice+=($value->p_price*$value->p_quantity);
+                            $discount+=($value->p_price*$value->p_discount/100)*$value->p_quantity;
+                            $finalamount=$totalprice-$discount;
+
                             ?>
 
                             <tbody>
@@ -51,6 +55,10 @@
                                     </td>
                                     <td data-th="Price">&#8377;
                                         <?php echo $value->p_price ?>
+                                    </td>
+                                    </td>
+                                    <td data-th="Discount">
+                                        <?php echo $value->p_discount." %" ?>
                                     </td>
                                     <td data-th="Quantity">
                                         <input type="number" class="form-control form-control-lg text-center" value="<?php echo $value->p_quantity ?>">
@@ -74,9 +82,12 @@
                         ?>
                     </table>
                     <div class="float-right text-right">
-                        <h4>Subtotal : ₹<?php echo $totalprice ?> </h4>
+                        <h4>Total : ₹<?php echo $totalprice ?> </h4><br>
+                        <h4>Discount : ₹<?php echo $discount ?> </h4><br>
+                        <h4>Sub Total : ₹<?php echo $finalamount ?> </h4>
                         <!-- <h1>$99.00</h1> -->
                     </div>
+
                 </div>
             </div>
             <div class="row mt-3 d-flex align-items-center">

@@ -54,6 +54,13 @@
                             </div>
                         </div>
                         <div class="row mt-3">
+                            <div class="col">
+                            <label for="productdiscount" class="input__label"><b>Product Discount</b></label>
+                                <input type="text" placeholder="Product Discount" required class="form-control"
+                                    name="productdiscount" id="">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
                             <div class="col text-center">
                                 <input type="submit" class="btn btn-primary" value="Add Product" name="btn-product"
                                     id="">

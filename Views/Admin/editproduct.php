@@ -42,6 +42,12 @@
                         </div>
                     </div>
                     <div class="row mt-3">
+                        <div class="col">
+                        <label for="productdiscount" class="input__label"><b>Product Discount</b></label>
+                            <input type="tel" placeholder="Enter Product Discount" class="form-control" name="p_discount" value="<?php echo $editproduct['Data'][0]->p_discount ?>" id="">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
                         <div class="col text-center">
                             <input type="submit" class="btn btn-primary" value="Update" name="btn-update" id="">
                             <input type="reset" class="btn btn-danger" name="" id="">

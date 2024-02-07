@@ -11,18 +11,21 @@
                         <div class="table-responsive mt-5">
                             <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
                                 <thead class="text-dark">
-                                    <tr>
+                                    <tr style="text-align:middel;vertical-align: middle;text-align: center;">
                                         <th>
-                                            <h6 class="fw-semibold mb-0">Product Id</h6>
+                                            <h6 class="fw-semibold mb-0">Product <br> Id</h6>
                                         </th>
                                         <th>
-                                            <h6 class="fw-semibold mb-0">sub category Id</h6>
+                                            <h6 class="fw-semibold mb-0">sub category <br> Id</h6>
                                         </th>
                                         <th>
                                             <h6 class="fw-semibold mb-0">Product Name</h6>
                                         </th>
                                         <th>
-                                            <h6 class="fw-semibold mb-0">Product Price</h6>
+                                            <h6 class="fw-semibold mb-0">Product <br> Price</h6>
+                                        </th>
+                                        <th>
+                                            <h6 class="fw-semibold mb-0">Discount</h6>
                                         </th>
                                         <th>
                                             <h6 class="fw-semibold mb-0">Product image</h6>
@@ -30,8 +33,6 @@
                                         <th>
                                             <h6 class="fw-semibold mb-0">Product Description</h6>
                                         </th>
-
-
                                         <th>
                                             <h6 class="fw-semibold mb-0">Action</h6>
                                         </th>
@@ -52,13 +53,13 @@
                                                     <?php echo $value->p_id; ?>
                                                 </h6>
                                             </td>
-                                            <td>
+                                            <td style="width: 13%;" class="text-wrap">
                                                 <h6 class="fw-semibold mb-1">
                                                     <?php echo $value->sc_name; ?>
                                                 </h6>
 
                                             </td>
-                                            <td>
+                                            <td style="width: 15%;" class="text-wrap">
                                                 <h6 class="fw-semibold mb-1">
                                                     <?php echo $value->p_name; ?>
                                                 </h6>
@@ -67,6 +68,12 @@
                                             <td>
                                                 <h6 class="fw-semibold mb-1">
                                                     <?php echo $value->p_price; ?>
+                                                </h6>
+
+                                            </td>
+                                            <td>
+                                                <h6 class="fw-semibold mb-1">
+                                                    <?php echo $value->p_discount." %"; ?>
                                                 </h6>
 
                                             </td>

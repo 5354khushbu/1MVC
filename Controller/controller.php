@@ -870,28 +870,30 @@ class controller extends Model
                         // $value->p_id;
                         // echo "inside foreach";
                         if ($value->p_id == $_REQUEST['productid']) {
-                            // echo "inside if";
+                            // // echo "inside if";
                             $CartFlag = true;
-                            $Cartid = $value->cart_id;
-                            $p_quantity = (int) $value->p_quantity;
-                            // var_dump($p_quantity);
-                            $Quantity = (int) $p_quantity + (int) 1;
-                            // var_dump($Quantity);
-                            // echo "Quantity"+$Quantity;
-                            $dt = array(
-                                'p_id' => $Data['Data'][0]->p_id,
-                                'c_id' => $_SESSION['UserData']->c_id,
-                                'p_quantity' => $Quantity,
-                                'p_price' => $Data['Data'][0]->p_price,
-                                'p_amount' => $Data['Data'][0]->p_price * $Quantity,
-                            );
-                            $added = $this->update('cart', $dt, array('c_id' => $_SESSION['UserData']->c_id, "cart_id" => $Cartid));
+                            // $Cartid = $value->cart_id;
+                            // $p_quantity = $value->p_quantity;
+                            // // var_dump($p_quantity);
+                            // $Quantity = $p_quantity + 1;
+                            // // var_dump($Quantity);
+                            // // echo "Quantity = ".$Quantity;
+                            // $dt = array(
+                            //     'p_id' => $Data['Data'][0]->p_id,
+                            //     'c_id' => $_SESSION['UserData']->c_id,
+                            //     'p_quantity' => $Quantity,
+                            //     'p_price' => $Data['Data'][0]->p_price,
+                            //     'p_amount' => $Data['Data'][0]->p_price * $Quantity,
+                            // );
+                            // $added = $this->update('cart', $dt, array('c_id' => $_SESSION['UserData']->c_id, "cart_id" => $Cartid));
                         }
                     }
                     // echo "</pre>";
                     // echo "outside loop";
                     // exit;
                     if ($CartFlag) {
+                        echo '<script>alert("product already added into cart..")</script>';
+                        echo '<script>window.location ="checkout";</script>';
                     } else {
                         # code...
                         $dt = array(
@@ -902,12 +904,9 @@ class controller extends Model
                             'p_amount' => $Data['Data'][0]->p_price,
                         );
                         $added = $this->insert('cart', $dt);
-                    }
-                    if ($added['Code'] == 1) {
-                        echo '<script>alert("product has been added into cart")</script>';
-                        header("location:checkout");
-                    } else {
-                        echo '<script>alert("product can not add in cart")</script>';
+
+                        echo '<script>alert("product has been added into cart.")</script>';
+                        echo '<script>window.location ="checkout";</script>';
                     }
                     break;
                 default:
