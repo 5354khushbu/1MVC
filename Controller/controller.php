@@ -55,7 +55,8 @@ class controller extends Model
                     include_once("Views/contact.php");
                     include_once("Views/footer.php");
                     break;
-                case '/gallery':
+                case '/usergallery':
+                    $galleryimages = $this->select("gallery");
                     include_once("Views/header.php");
                     include_once("Views/gallery.php");
                     include_once("Views/footer.php");
@@ -82,7 +83,7 @@ class controller extends Model
                     break;
                 case '/logout':
                     session_destroy();
-                    header("location:login");
+                    header("location:home");
                     break;
                 case '/registration':
                     include_once("Views/header.php");
@@ -224,9 +225,13 @@ class controller extends Model
                     break;
 
                 case '/buynow':
-                    // include_once("Views/header.php");
-                    include_once("Views/buynow.php");
-                    // include_once("Views/footer.php");
+                    if(isset($_SESSION['UserData'])){
+                        include_once("Views/header.php");
+                        include_once("Views/buynow.php");
+                        include_once("Views/footer.php");
+                    }else{
+                        header("location:login");
+                    }
                     break;
 
                 // ===========================Admin panel=========================

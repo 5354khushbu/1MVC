@@ -45,7 +45,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		.pt-8 {
 			padding-top: 8rem
 		}
-		.callbacks_tabs a:after{
+
+		.callbacks_tabs a:after {
 			background-color: #0000ff00 !important;
 		}
 	</style>
@@ -175,7 +176,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<a href="sheetmask">
 												<i class="fa fa-angle-right"></i>Sheetmask</a>
 										</li>
-
 									</ul>
 								</li>
 								<li class="treeview">
@@ -188,7 +188,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<a href="shampoo&conditioner">
 												<i class="fa fa-angle-right"></i>Shampoo & conditioner</a>
 										</li>
-
 										<li>
 											<a href="hairoil">
 												<i class="fa fa-angle-right"></i>Hair Oil</a>
@@ -204,7 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</a>
 						</li>
 						<li class="treeview">
-							<a href="gallery">
+							<a href="usergallery">
 								<span>Gallery</span>
 							</a>
 						</li>
@@ -213,17 +212,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span>Contact</span>
 							</a>
 						</li>
+						<?php if (isset($_SESSION['UserData'])) { ?>
+								<li class="treeview">
+									<a class="btn btm-sm btn-secondary mx-2 p-2" style="width:80px; height:40px" href="logout">
+										<span>Logout</span>
+									</a>
+								</li>
+						<?php } else { ?>
 					</ul>
 					<div class="dropdown">
-						<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-							aria-expanded="false">
-							Account
-						</button>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="registration">Registration</a></li>
-							<li><a class="dropdown-item" href="login">Login</a></li>
-
-						</ul>
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								Account
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="registration">Registration</a></li>
+								<li><a class="dropdown-item" href="login">Login</a></li>
+							</ul>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

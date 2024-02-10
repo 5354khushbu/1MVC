@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2024 at 06:47 PM
+-- Generation Time: Feb 10, 2024 at 11:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -198,15 +198,22 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`g_id`, `g_path`) VALUES
-(2, 'oil33.jpgjpg'),
-(3, 'g3.jpgjpg'),
-(4, 'k3.jpgjpg'),
-(5, 'g5.jpgjpg'),
-(6, 'g6.jpgjpg'),
-(7, 'g7.jpgjpg'),
-(8, 'comp3.webpwebp'),
-(10, 'facewash6.jpgjpg'),
-(14, '4_profile.jpgjpg');
+(2, 'oil33.jpg'),
+(3, 'g3.jpg'),
+(4, 'k3.jpg'),
+(5, 'g5.jpg'),
+(6, 'g6.jpg'),
+(7, 'g7.jpg'),
+(8, 'comp3.webp'),
+(10, 'facewash6.jpg'),
+(14, '4_profile.jpg'),
+(16, 'ee1.webpwebp'),
+(17, 'cream13.webpwebp'),
+(18, 'comp3.webpwebp'),
+(19, 'comp1.webpwebp'),
+(20, 'f9.jpgjpg'),
+(21, 'f13.webpwebp'),
+(23, 'shampoo6.webpwebp');
 
 -- --------------------------------------------------------
 
@@ -396,10 +403,9 @@ INSERT INTO `pro` (`p_id`, `sc_id`, `p_name`, `p_price`, `p_image`, `p_des`, `p_
 (101, 6, 'Hair Oil', 490, 'oil2.webp', 'SESA Ayurvedic Hair Oil', 20),
 (102, 6, 'Hair Oil', 200, 'oil33.jpg', 'Roasted Hair Oil with Vital Herbs Mix', 17),
 (103, 6, 'Hair Oil', 349, 'oil4.jpg', 'Yeka Moringa Herbal Hair Oil (1000ml)', 16),
-(104, 6, 'Hair Oil', 250, 'oil7.jpg', 'Indulekha Bringha Ayurvedic Hair Oil.', 10),
+(104, 6, 'Hair Oil', 250, 'oil8.webp', 'Indulekha Bringha Ayurvedic Hair Oil.', 10),
 (105, 6, 'Hair Oil', 490, 'oil5.webp', '21 Herbs Herbal Oil Promotes Hair Growth.', 12),
 (108, 18, 'Face Wash', 200, 'facewash3.webp', 'Biotique bio white Advanced Fairness Face wash.', 30),
-(109, 9, 'Eyelinear', 222, 'aaa.webp', 'wws', 20),
 (112, 18, 'Face Wash', 279, 'Face Washf123.jpg', 'Lakme Face wash', 15),
 (113, 12, 'Foundation', 279, 'Foundationf9.jpg', 'Full Coverage Foundation', 17);
 
@@ -615,7 +621,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `invoice`
