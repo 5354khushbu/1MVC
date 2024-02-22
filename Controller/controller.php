@@ -32,7 +32,7 @@ class controller extends Model
                 //============== User panel=================
                 case '/':
                 case '/home':
-                    $data=$this->select("pro");
+                    $data = $this->select("pro");
                     // echo "<pre>";
                     // print_r($data['Data'][5]);
                     // echo "</pre>";
@@ -78,6 +78,8 @@ class controller extends Model
                             } else {
                                 header("location:home");
                             }
+                        } else {
+                            echo '<script>alert("Please enter valid Username or Password..")</script>';
                         }
                     }
                     break;
@@ -225,11 +227,16 @@ class controller extends Model
                     break;
 
                 case '/buynow':
-                    if(isset($_SESSION['UserData'])){
+                    if (isset($_SESSION['UserData'])) {
+                        
+                        $c_id=$_SESSION['UserData']->c_id;
+                        $this->update("cart",array("status"=>1),array("c_id"=>$c_id));
+
+                        $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.status' => 0));
                         include_once("Views/header.php");
                         include_once("Views/buynow.php");
-                        include_once("Views/footer.php");
-                    }else{
+                        // include_once("Views/footer.php");
+                    } else {
                         header("location:login");
                     }
                     break;
@@ -459,6 +466,10 @@ class controller extends Model
                 case '/product':
                     // $allproduct = $this->select("pro");
                     $allproduct = $this->selectjoin('pro', array('subcategory' => 'subcategory.sc_id = pro.sc_id'));
+                    if (isset($_REQUEST['srch'])) {
+                        $product = $_REQUEST['searchtxt'];
+                        $allproduct = $this->searchdata('pro', array("subcategory" => "pro.p_name LIKE '%$product%'"), array("pro.sc_id" => "subcategory.sc_id"));
+                    }
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allproduct.php");
                     include_once("Views/Admin/footer.php");
@@ -475,8 +486,8 @@ class controller extends Model
                                 "message" => "Choose image file to upload."
                             );
                         } else {
-                            $profilename = $_POST['productname'] .$_FILES["profile_pic"]["name"] ;
-                            $target = "Public/Assets/images/".$profilename;
+                            $profilename = $_POST['productname'] . $_FILES["profile_pic"]["name"];
+                            $target = "Public/Assets/images/" . $profilename;
                             if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $target)) {
                                 $response = array(
                                     "type" => "success",
@@ -606,34 +617,24 @@ class controller extends Model
                     }
                     break;
                 case '/allorder':
-                    $allorder = $this->selectjoin("orderdata", array('users' => 'orderdata.c_id = users.c_id', 'pro' => 'orderdata.p_id = pro.p_id'));
+                    $allorder = $this->selectjoin("orderdata", array('users' => 'orderdata.c_id = users.c_id'));
                     // print_r($allorder);
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allorder.php");
                     include_once("Views/Admin/footer.php");
                     break;
-                case '/editorder':
-                    $editorder = $this->select("orderdata", array("o_id" => $_REQUEST['o_id']));
-                    include_once("Views/Admin/header.php");
-                    include_once("Views/Admin/editorder.php");
-                    include_once("Views/Admin/footer.php");
-                    if (isset($_POST['btn-update'])) {
-                        array_pop($_POST);
-                        unset($_POST['btn-update']);
-                        //$data = array_merge($_POST,array('hobby' => $hob));
-                        $data = $_POST;
-                        $UpdateRes = $this->update("orderdata", $data, array("o_id" => $_GET['o_id']));
-                        if ($UpdateRes['Code'] == 1) {
-                            header("location:allorder");
-                        } else {
-                            echo "please try again";
-                        }
+                case '/acceptorder':
+                    $UpdateRes = $this->update("orderdata", array("status"=>"In Proccess"), array("o_id" => $_GET['o_id']));
+                    if ($UpdateRes['Code'] == 1) {
+                        header("location:allorder");
+                    } else {
+                        echo "please try again";
                     }
                     break;
                 case '/deleteorder':
                     $OrderDeleteResponse = $this->delete("orderdata", array("o_id" => $_GET['o_id']));
-                    echo "<pre>";
-                    print_r($OrderDeleteResponse);
+                    // echo "<pre>";
+                    // print_r($OrderDeleteResponse);
                     try {
                         if ($OrderDeleteResponse['Code'] == 1) {
                             header("location:allorder");
@@ -706,15 +707,13 @@ class controller extends Model
                     }
                     break;
                 case '/payment':
-                    // $allpayment = $this->select("payment");
                     $allpayment = $this->selectjoin('payment', array('users' => 'users.c_id = payment.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allpayment.php");
                     include_once("Views/Admin/footer.php");
                     break;
                 case '/invoice':
-                    // $allinvoice = $this->select("invoice");
-                    $allinvoice = $this->selectjoin("invoice", array('users' => 'invoice.c_id = users.c_id', 'pro' => 'invoice.p_id = pro.p_id'));
+                    $allinvoice = $this->selectjoin("invoice", array('users' => 'invoice.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allinvoice.php");
                     include_once("Views/Admin/footer.php");
@@ -837,14 +836,15 @@ class controller extends Model
                     }
                     break;
                 case '/generatereport':
-                    $allgeneratereport = $this->select("orderdata");
+                    $allgeneratereport = $this->selectjoin("invoice",array('users' => 'invoice.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allgeneratereport.php");
                     include_once("Views/Admin/footer.php");
                     break;
                 case '/checkout':
                     if (isset($_SESSION['UserData'])) {
-                        $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.c_id' => $_SESSION['UserData']->c_id));
+                        $c_id=$_SESSION['UserData']->c_id;
+                        $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.status' => 0,"c_id"=>$c_id));
                         include_once("Views/checkout.php");
                     } else {
                         header("location:login");
@@ -938,7 +938,7 @@ class controller extends Model
 
             //Recipients
             $this->mail->setFrom('khushburathod5354@gmail.com', 'Khushbu Rathod');
-            $this->mail->addAddress($email, 'Joe User');     //Add a recipient
+            $this->mail->addAddress($email, '');     //Add a recipient
             // $this->mail->addAddress('ellen@example.com');               //Name is optional
             $this->mail->addReplyTo('khushirathod0096@gmail.com', 'Information');
             // $this->mail->addCC('cc@example.com');

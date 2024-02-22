@@ -7,18 +7,10 @@ class Model
     public $connection = "";
     public function __construct()
     {
-
-        // echo "inside constructor";
-        // $this->connection=new mysqli("hostname","username","password","databasename");
         try {
-            // $this->connection=new mysqli("localhost1","root","","masterdatabase");
             $this->connection = new mysqli("localhost", "root", "", "masterdatabase");
 
         } catch (\Throwable $th) {
-            // echo "<pre>";
-            // print_r($th->getMessage());
-            // echo "</pre>";
-            // echo "<h1>".$th->getMessage()."</h1>";
 
             if (!file_exists("log")) {
                 mkdir("log");
@@ -28,8 +20,6 @@ class Model
             $ErrorMsg .= "Error dateTime >>>" . date("d-m-Y H:i:s A") . PHP_EOL;
             $fileName = date('d_m_Y') . "_Error_log.txt";
             file_put_contents("log/" . $fileName, $ErrorMsg, FILE_APPEND);
-            // echo "<h1>".$th->getMessage()."</h1>";
-            // exit;
         }
     }
     function login($uname, $pass)
@@ -86,20 +76,21 @@ class Model
         return $Res;
 
     }
-    function selectjoin($tbl1, $where)
+    function selectjoin($tbl1, $where, $condition="")
     {
+
         // $SQL = "SELECT $clm FROM $tbl ";
         $SQL="SELECT * FROM $tbl1";
         foreach ($where as $key => $value) {
-            $SQL .= " LEFT JOIN $key on $value ";
+            $SQL .= " LEFT JOIN $key on $value";
         }
-        // if ($whr != "") {
-        //     $SQL .= " WHERE ";
-        //     foreach ($whr as $key => $value) {
-        //         $SQL .= "$key = '$value'";
-        //     }
-        //     $SQL = rtrim($SQL, "AND");
-        // }
+        if ($condition != "") {
+            $SQL .= " WHERE ";
+            foreach ($condition as $key => $value) {
+                $SQL .= "$key = $value AND ";
+            }
+            $SQL = rtrim($SQL, "AND ");
+        }
 
 
         
@@ -112,6 +103,46 @@ class Model
                 $Data[] = $row;
             }
             // print_r($Data);
+            $Res['Code'] = 1;
+            $Res['Data'] = $Data;
+            $Res['Msg'] = "Success";
+
+        } else {
+            $Res['Code'] = 0;
+            $Res['Data'] = 0;
+            $Res['Msg'] = "Try again";
+        }
+        return $Res;
+
+    }
+    function searchdata($tbl1, $where, $condition="")
+    {
+
+        // ("subcategory" => "pro.p_name LIKE %$product%"),array("pro.sc_id = subcategory.sc_id")
+        // $sql="Select * From pro Inner join subcategory On pro.p_name like "%$Comp%" and pro.sc_id=subcategory.sc_id";
+        
+        $SQL="SELECT * FROM $tbl1";
+        foreach ($where as $key => $value) {
+            $SQL .= " INNER JOIN $key on $value";
+        }
+        if ($condition != "") {
+            $SQL .= " AND ";
+            foreach ($condition as $key => $value) {
+                $SQL .= "$key = $value";
+            }
+            $SQL = rtrim($SQL, "AND");
+        }
+       
+        // echo "<pre>";
+        // echo $SQL;
+        // exit;
+        $SQLEX = $this->connection->query($SQL);
+        // print_r($SQLEX);
+        // exit;
+        if ($SQLEX->num_rows > 0) {
+            while ($row = $SQLEX->fetch_object()) {
+                $Data[] = $row;
+            }
             $Res['Code'] = 1;
             $Res['Data'] = $Data;
             $Res['Msg'] = "Success";

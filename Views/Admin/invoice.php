@@ -303,7 +303,7 @@
                                                 <h6 class="fw-semibold mb-0">Product Id</h6>
                                             </th>
                                             <th>
-                                                <h6 style="margin-left: -20px" class="fw-semibold mb-0">Quantity</h6>
+                                                <h6 class="fw-semibold mb-0">Order Date</h6>
                                             </th>
                                             <th style="text-align: end;">
                                                 <h6 class="fw-semibold mb-0">Price</h6>
@@ -320,17 +320,17 @@
                                             <tr>
                                                 <td>
                                                     <h6 class="fw-semibold mb-1">
-                                                        <?php echo $value->p_id; ?>
+                                                        <?php echo $value->p_name; ?>
                                                     </h6>
                                                 </td>
                                                 <td>
                                                     <h6 class="fw-semibold mb-1">
-                                                        <?php echo $value->i_quantity; ?>
+                                                        <?php echo $value->o_date; ?>
                                                     </h6>
                                                 </td>
                                                 <td style="text-align: end;">
                                                     <h6 class="fw-semibold mb-1">
-                                                        <?php echo $value->i_price; ?>
+                                                        <?php echo $value->Amount; ?>
                                                     </h6>
                                                 </td>
                                             </tr>
@@ -350,7 +350,7 @@
                                         <?php
                                         $subtotal = 0;
                                         foreach ($data['Data'] as $key => $value) {
-                                            $subtotal += $value->i_price;
+                                            $subtotal += $value->Amount;
                                         }
                                         echo $subtotal;
                                         ?>

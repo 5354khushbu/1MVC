@@ -7,6 +7,23 @@
   <title>Admin Dashboard</title>
   <link rel="shortcut icon" type="image/png" href="<?php echo $this->base_url; ?>assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="<?php echo $this->base_url; ?>assets/css/styles.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.csshttps://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/js/jquery.dataTables.min.js">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.csshttps://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/js/jquery.dataTables.min.js">
+
+  <!-- invoice script -->
+    <!-- jQuery -->
+    <script src="<?php echo $this->base_url; ?>plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="<?php echo $this->base_url; ?>plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="<?php echo $this->base_url; ?>plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="<?php echo $this->base_url; ?>plugins/toastr/toastr.min.js"></script>
+    <script src="<?php echo $this->base_url; ?>plugins/script.js"></script>
 
 </head>
 
@@ -16,10 +33,10 @@
     data-sidebar-position="fixed" data-header-position="fixed">
     <!-- Sidebar Start -->
     <!-- -------------------------------------------------------------- -->
-    <aside class="left-sidebar">
+    <aside class="left-sidebar" style="background-color: #00000021;">
       <!-- Sidebar scroll-->
       <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
+        <div class="brand-logo d-flex align-items-center justify-content-between" style="background-color: #ff00f314;">
           <a href="admindashboard" class="text-nowrap logo-img">
             <i class="fa-solid fa-user"></i><h4 class="mt-4">Admin Dashboard</h4>
             <!-- <img src="<?php echo $this->base_url; ?>assets/images/logos/dark-logo.svg" width="180" alt="" /> -->
