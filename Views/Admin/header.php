@@ -37,7 +37,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between" style="background-color: #ff00f314;">
-          <a href="admindashboard" class="text-nowrap logo-img">
+          <a href="dashboard" class="text-nowrap logo-img">
             <i class="fa-solid fa-user"></i><h4 class="mt-4">Admin Dashboard</h4>
             <!-- <img src="<?php echo $this->base_url; ?>assets/images/logos/dark-logo.svg" width="180" alt="" /> -->
           </a>

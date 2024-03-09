@@ -5,20 +5,20 @@
 		<ul class="list-agileits py-4 border-bottom">
 			<li>
 				<a href="home">
-					<h5> Home
+					<h5> Home 
 					</h5>
 				</a>
 			</li>
-			<li class="my-3">
-				<a href="about" class="mx-4">
-					<h5> About Us
+			<li class="my-1">
+				<a href="about">
+					<h5> | About Us | 
 					</h5>
 				</a>
 			</li>
 
 			<li>
 				<a href="contact">
-					<h5>Contact Us
+					<h5> Contact Us 
 					</h5>
 				</a>
 			</li>

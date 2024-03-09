@@ -59,7 +59,8 @@
                                 <tbody>
                                     <?php
                                     $index = 1;
-                                    if ($allproduct['Data'] != 0) {
+                                    if ($allproduct['Data'] != 0
+                                    ) {
                                         foreach ($allproduct['Data'] as $key => $value) {
                                             ?>
                                             <tr>

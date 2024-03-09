@@ -74,7 +74,7 @@ class controller extends Model
                             // exit;
                             $_SESSION['UserData'] = $LoginREs['Data'];
                             if ($LoginREs['Data']->role_id == 1) {
-                                header("location:allusers");
+                                header("location:dashboard");
                             } else {
                                 header("location:home");
                             }
@@ -230,7 +230,7 @@ class controller extends Model
                     if (isset($_SESSION['UserData'])) {
                         
                         $c_id=$_SESSION['UserData']->c_id;
-                        $this->update("cart",array("status"=>1),array("c_id"=>$c_id));
+                        $this->delete("cart",array("c_id"=>$c_id));
 
                         $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.status' => 0));
                         include_once("Views/header.php");
@@ -243,7 +243,14 @@ class controller extends Model
 
                 // ===========================Admin panel=========================
 
+                case '/dashboard':
+                    $allUsers = $this->select("users");
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/dashboard.php");
+                    include_once("Views/Admin/footer.php");
+                    break;
                 case '/allusers':
+                    $this->logincheck();
                     $allUsers = $this->select("users");
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allusers.php");
@@ -612,7 +619,7 @@ class controller extends Model
                         if ($GalleryDeleteResponse['Code'] == 1) {
                             header("location:gallery");
                         }
-                    } catch (\Exception $e) {
+                    } catch (\Exception $e){
                         echo $e->getMessage();
                     }
                     break;
@@ -921,6 +928,14 @@ class controller extends Model
             header("location:home");
         }
         ob_flush();
+    }
+
+    function logincheck()
+    {
+        if (!isset($_SESSION['UserData'])) {
+            echo '<script>alert("Please Login.")</script>';
+            echo '<script>window.location ="login";</script>';
+        }
     }
 
     function sendemail($email, $msg)

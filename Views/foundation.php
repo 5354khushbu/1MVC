@@ -11,7 +11,6 @@
         /* Optional: add border radius for rounded corners */
     }
 </style>
-
     <!-- banner-slider -->
     <section class="diagonal-stripe-one inner-bg">
         <div class="container">

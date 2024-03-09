@@ -54,8 +54,7 @@
 				</h6>
 				</p>
 			</div>
-			<br>
-			<h2>Why Choose Beauty Shop?</h2>
+			<!-- <h2>Why Choose Beauty Shop?</h2>
 			<br>
 			<p>
 			<h5>- Premium Quality: We source our products from reputable brands known for their commitment to quality
@@ -64,7 +63,58 @@
 			<p>
 			<h5>- Customer Satisfaction: Your satisfaction is our priority. We strive to provide excellent customer
 				service and a seamless shopping experience.</h5>
-			</p>
+			</p> -->
+			<!-- <div class="blog-mid-sec py-sm-5"> -->
+			<div class="mx-auto">
+				<h5 class="beauty-center-title my-5 text-center text-capitalize">looking for our best posts?</h5>
+			</div>
+			<ul id="flexiselDemo2">
+				<li>
+					<div class="blog-item">
+						<img src="<?php echo $this->base_url; ?>images/g5.jpg" alt=" " class="img-fluid" />
+						<div class="floods-text">
+							<h6>
+								Eyeshadow + Compact Powder<br>
+								MRP:₹279
+							</h6>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="<?php echo $this->base_url; ?>images/lip7.cms" alt=" " class="img-fluid" />
+						<div class="floods-text">
+							<h6>
+								Red and pink Lipstick set<br>
+								MRP:₹199
+							</h6>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="<?php echo $this->base_url; ?>images/g7.jpg" alt=" " class="img-fluid" />
+						<div class="floods-text">
+							<h6>
+								Eyeshadow with compact powder<br>
+								MRP:₹279
+							</h6>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="<?php echo $this->base_url; ?>images/g8.jpg" alt=" " class="img-fluid" />
+						<div class="floods-text">
+							<h6>
+								Best Red Nail Polish <br>
+								MRP:₹49
+							</h6>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 
 
 	</section>

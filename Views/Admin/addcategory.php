@@ -25,7 +25,7 @@
                                 </div> -->
                             </div>
 
-                            
+                            <label for="categoryname" class="input__label"><b>Category Name</b></label>
                             <select name="category" class="form-control" id="category">
                                 <option value="">--Select Category--</option>
                                 <option value="makeup">Makeup</option>

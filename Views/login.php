@@ -6,11 +6,14 @@
                     <form method="post">
                         <div class="row">
                             <div class="col">
+                        <label for="text" class="input__label"><b>Username</b></label>
                                 <input type="text" placeholder="Enter User Name" required class="form-control" name="username" id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
+                            <label for="password" class="input__label"><b>Password</b></label>
+
                                 <input type="password" placeholder="Enter Password" required class="form-control" name="password" id=""><br>
                                 <a href="sendemail">Forget your password?</a>
                             </div>

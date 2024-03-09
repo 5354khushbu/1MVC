@@ -20,12 +20,13 @@
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
                         <div class="row mt-3">
+                        <label for="categoryname" class="input__label"><b>Category Name</b></label>
                             <select name="category" class="form-control" id="category">
                                 <option value="">Select Category</option>
                         </div><br>
-                        <div class="row mt-3"><br>
-                            <label for="subcategory" class="input__label"><b>Sub Category Name</b></label>
-                            <input type="text" name="subcategory" class="form-control" id="subcategory"
+                        <div class="row mt-3">
+                            <label for="subcategoryname" class="input__label"><b>Sub Category Name</b></label>
+                            <input type="text" name="subcategory" class="form-control" id="subcategory" required
                                 placeholder="Enter Sub Category">
                         </div>
                         <div class="row mt-3">

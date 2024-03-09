@@ -12,12 +12,14 @@
                 <form method="post">
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="text" class="input__label"><b>Username</b></label>
                             <input type="text" placeholder="User Name" class="form-control" name="username" id=""
                                 required>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="text" class="input__label"><b>Phone Number</b></label>
                             <input type="number" id="mobile" name="mobile" onblur="mobilevalid()" class="form-control"
                                 placeholder="Enter phone number" required>
                             <span id="phone">
@@ -28,18 +30,21 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="text" class="input__label"><b>Password</b></label>
                             <input type="password" placeholder="Password" class="form-control" name="password"
                                 id="password">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="productprice" class="input__label"><b>Confirm Password</b></label>
                             <input type="password" onblur="check()" placeholder="Confirm Password" class="form-control"
                                 name="confirmpassword" id="confirmpassword">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                        <label for="productprice" class="input__label"><b>Email</b></label>
                             <input type="email" placeholder="Enter Email" class="form-control" name="email" id=""
                                 required>
                         </div>
@@ -62,7 +67,8 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col">
-                            <label for="address">Address</label>
+                        
+                            <label for="address"><b>Address</b></label>
                             <textarea name="address" class="form-control" cols="30" rows="3" required></textarea>
                         </div>
                     </div>
