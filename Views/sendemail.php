@@ -6,6 +6,8 @@
                 <form method="post">
                     <div class="row">
                         <div class="col">
+                        <label for="text" class="input__label"><b>Email</b></label>
+
                             <input type="text" placeholder="Enter Email Address" class="form-control" name="email"
                                 id="">
                         </div>

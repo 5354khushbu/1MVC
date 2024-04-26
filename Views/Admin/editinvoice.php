@@ -19,18 +19,10 @@
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col">
-                                        <label for="orderid" class="input__label"><b>Order Id</b></label>
-                                            <input type="tel" placeholder="Enter Order Id " required
-                                                class="form-control" name="o_id"
-                                                value="<?php echo $editinvoicedata['Data'][0]->o_id ?>" id="">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col">
                                         <label for="productid" class="input__label"><b>Product Id</b></label>
                                             <input type="tel" placeholder="Enter Product Id" required
                                                 class="form-control" name="p_id"
-                                                value="<?php echo $editinvoicedata['Data'][0]->p_id ?>" id="">
+                                                value="<?php echo $editinvoicedata['Data'][0]->p_name ?>" id="">
                                         </div>
                                     </div>
                                     <div class="row mt-3">
@@ -46,33 +38,15 @@
                                         <label for="invoicedate" class="input__label"><b>Invoice Date</b></label>
                                             <input type="date" placeholder="Enter Invoice Date" required
                                                 class="form-control" name="i_date"
-                                                value="<?php echo $editinvoicedata['Data'][0]->i_date ?>" id="">
+                                                value="<?php echo $editinvoicedata['Data'][0]->o_date ?>" id="">
                                         </div>
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col">
-                                        <label for="invoicequantity" class="input__label"><b>Invoice Quantity</b></label>
-                                            <input type="tel" placeholder="Enter Invoice Quantity " required
-                                                class="form-control" name="i_quantity" onchange="total()"
-                                                value="<?php echo $editinvoicedata['Data'][0]->i_quantity ?>"
-                                                id="quantity">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col">
-                                        <label for="price" class="input__label"><b>Price</b></label>
+                                        <label for="price" class="input__label"><b>Total Amount</b></label>
                                             <input type="tel" placeholder="Enter Price" required class="form-control"
                                                 name="i_price" onchange="total()"
-                                                value="<?php echo $editinvoicedata['Data'][0]->i_price ?>" id="price">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col">
-                                        <label for="totalprice" class="input__label"><b>Total Price</b></label>
-                                            <input type="tel" placeholder="Enter Total Price" required
-                                                class="form-control" name="i_totalprice"
-                                                value="<?php echo $editinvoicedata['Data'][0]->i_totalprice ?>"
-                                                id="total_price">
+                                                value="<?php echo $editinvoicedata['Data'][0]->Amount ?>" id="price">
                                         </div>
                                     </div>
                                     <div class="row mt-3">

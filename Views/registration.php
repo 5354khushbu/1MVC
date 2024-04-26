@@ -23,9 +23,7 @@
                             <input type="number" id="mobile" name="mobile" onblur="mobilevalid()" class="form-control"
                                 placeholder="Enter phone number" required>
                             <span id="phone">
-
                             </span>
-
                         </div>
                     </div>
                     <div class="row mt-3">

@@ -97,7 +97,6 @@
 				</div>
 				<div class="card mt-5">
 					<img class="img-fluid" src="<?php echo $this->base_url; ?>images/mascara1.avif" alt="" />
-
 					<div class="card-body">
 						<div class="news-title">
 							<h4 class="title-small">
@@ -288,8 +287,7 @@
 							<a href="addcart?productid=<?php echo $data['Data'][68]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
 								<a href="addcart?productid=<?php echo $data['Data'][68]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
-										style="background: #e83e8c; color:white;width:48%">Buy
-										Now</button></a>
+										style="background: #e83e8c; color:white;width:48%">Buy Now</button></a>
 							</div>
 						</div>
 					</div>
@@ -302,7 +300,7 @@
 					<div class="card">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $data['Data'][67]->p_image ?>"
+								<img class="card-img-bottom" height="350px" src="<?php echo $this->base_url . "images/" . $data['Data'][67]->p_image ?>"
 									alt="Card image cap">
 							</a>
 						</div>
@@ -314,8 +312,7 @@
 							<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
 								<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
-										style="background: #e83e8c; color:white;width:48%">Buy
-										Now</button></a>
+										style="background: #e83e8c; color:white;width:48%">Buy Now</button></a>
 							</div>
 						</div>
 					</div>
@@ -341,8 +338,7 @@
 							<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
 								<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
-										style="background: #e83e8c; color:white;width:48%">Buy
-										Now</button></a>
+										style="background: #e83e8c; color:white;width:48%">Buy Now</button></a>
 							</div>
 						</div>
 					</div>
@@ -369,8 +365,7 @@
 							<a href="addcart?productid=<?php echo $data['Data'][65]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
 								<a href="addcart?productid=<?php echo $data['Data'][65]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
-										style="background: #e83e8c; color:white;width:48%">Buy
-										Now</button></a>
+										style="background: #e83e8c; color:white;width:48%">Buy Now</button></a>
 							</div>
 						</div>
 					</div>
@@ -394,8 +389,7 @@
 							<a href="addcart?productid=<?php echo $data['Data'][24]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
 								<a href="addcart?productid=<?php echo $data['Data'][24]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
-										style="background: #e83e8c; color:white;width:48%">Buy
-										Now</button></a>
+										style="background: #e83e8c; color:white;width:48%">Buy Now</button></a>
 							</div>
 						</div>
 					</div>
@@ -418,8 +412,7 @@
 							<a href="addcart?productid=<?php echo $data['Data'][5]	->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
 								<a href="addcart?productid=<?php echo $data['Data'][5]	->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
-										style="background: #e83e8c; color:white;width:48%">Buy
-										Now</button></a>
+										style="background: #e83e8c; color:white;width:48%">Buy Now</button></a>
 							</div>
 						</div>
 					</div>

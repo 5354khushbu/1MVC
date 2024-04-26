@@ -106,7 +106,7 @@
                       <span class="timeline-badge border-2 border border-primary flex-shrink-0 my-8"></span>
                       <span class="timeline-badge-border d-block flex-shrink-0"></span>
                     </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment received from John Doe of $385.90</div>
+                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment received from John Doe of 385.90</div>
                   </li>
                   <li class="timeline-item d-flex position-relative overflow-hidden">
                     <div class="timeline-time text-dark flex-shrink-0 text-end">10:00 am</div>
@@ -124,7 +124,7 @@
                       <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>
                       <span class="timeline-badge-border d-block flex-shrink-0"></span>
                     </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment was made of $64.95 to Michael</div>
+                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment was made of 64.95 to Michael</div>
                   </li>
                   <li class="timeline-item d-flex position-relative overflow-hidden">
                     <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>
@@ -185,7 +185,7 @@
                       <tr>
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>
                         <td class="border-bottom-0">
-                            <h6 class="fw-semibold mb-1">Sunil Joshi</h6>
+                            <h6 class="fw-semibold mb-1">Khushbu</h6>
                             <span class="fw-normal">Web Designer</span>                          
                         </td>
                         <td class="border-bottom-0">
@@ -197,13 +197,13 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">$3.9</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">3.9</h6>
                         </td>
                       </tr> 
                       <tr>
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">2</h6></td>
                         <td class="border-bottom-0">
-                            <h6 class="fw-semibold mb-1">Andrew McDownland</h6>
+                            <h6 class="fw-semibold mb-1">smita</h6>
                             <span class="fw-normal">Project Manager</span>                          
                         </td>
                         <td class="border-bottom-0">
@@ -215,13 +215,13 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">$24.5k</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">24.5k</h6>
                         </td>
                       </tr> 
                       <tr>
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">3</h6></td>
                         <td class="border-bottom-0">
-                            <h6 class="fw-semibold mb-1">Christopher Jamil</h6>
+                            <h6 class="fw-semibold mb-1">Jamil</h6>
                             <span class="fw-normal">Project Manager</span>                          
                         </td>
                         <td class="border-bottom-0">
@@ -233,7 +233,7 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">$12.8k</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">12.8k</h6>
                         </td>
                       </tr>      
                       <tr>
@@ -251,7 +251,7 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">$2.4k</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">2.4k</h6>
                         </td>
                       </tr>                       
                     </tbody>
